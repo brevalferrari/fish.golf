@@ -117,6 +117,68 @@
                 background-position: 0% 50%;
             }
         }
+        .center {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 100px;
+            background-color: #ccc;
+            border-radius: 3px;
+        }
+        #center {
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.2);
+            /* Black w/opacity/see-through */
+            border: 3px solid;
+        }
+
+        .rainbow {
+            text-align: center;
+            text-decoration: underline;
+            font-size: 32px;
+            font-family: monospace;
+            letter-spacing: 5px;
+        }
+        .rainbow_text_animated {
+            background: linear-gradient(
+                to right,
+                #6666ff,
+                #0099ff,
+                #00ff00,
+                #ff3399,
+                #6666ff
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbow_animation 2s linear infinite;
+            background-size: 400% 100%;
+        }
+
+        @keyframes rainbow_animation {
+            0%,
+            100% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 100% 0;
+            }
+        }
+
+        .visible {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .invisible {
+            visibility: hidden;
+            opacity: 0;
+        }
     </style>
 
     <script>
@@ -140,12 +202,18 @@
 
         const incrementTimer = () => {
             timerTime++;
-            if (timerTime > 5) {
+            if (timerTime > 4) {
                 stop();
                 document
                     .getElementsByTagName("body")[0]
                     .classList.add("explode");
                 document.getElementById("window").hidden = true;
+                setTimeout(() => {
+                    document
+                        .getElementById("center")
+                        .classList.remove("invisible");
+                    document.getElementById("center").classList.add("visible");
+                }, 2000);
             }
         };
 
@@ -233,6 +301,19 @@
                 oninput="update_speed()"
             />
             <label for="range24">More</label>
+        </div>
+        <div
+            id="center"
+            class="center invisible"
+            style="
+                color: white;
+                background: transparent;
+                transition:
+                    visibility 5s ease-in,
+                    opacity 5s ease-in;
+            "
+        >
+            <h1 class="rainbow rainbow_text_animated">LOOK WHAT YOU'VE DONE</h1>
         </div>
     </body>
 </html>
