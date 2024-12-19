@@ -23,6 +23,7 @@ const incrementTimer = () => {
     document.getElementsByTagName("body")[0].classList.add("explode");
     document.getElementById("window").hidden = true;
     document.getElementById("title").hidden = true;
+    document.getElementById("myTable").hidden = true;
     setTimeout(() => {
       document.getElementById("center").classList.remove("invisible");
       document.getElementById("center").classList.add("visible");
@@ -41,4 +42,30 @@ function update_speed() {
   }
   document.getElementById("bar").style["animation-duration"] =
     (9 / Number(document.getElementById("range23").value)).toString() + "s";
+}
+
+function add_entry(command) {
+  document
+    .getElementById("myTable")
+    .getElementsByTagName("tbody")[0].innerHTML +=
+    "<tr><td>" +
+    command +
+    "</td><td>" +
+    makeid(Math.floor(Math.random() * 18)) +
+    "</td><td>" +
+    new Date().getTime().toExponential() +
+    "</td></tr>";
+}
+
+function makeid(length) {
+  let result = "";
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const charactersLength = characters.length;
+  let counter = 0;
+  while (counter < length) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    counter += 1;
+  }
+  return result;
 }
