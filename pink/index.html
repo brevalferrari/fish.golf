@@ -18,25 +18,52 @@
         />
         <link rel="stylesheet" href="index.css" />
 
+        <script
+            type="text/javascript"
+            src="https://chir.ag/projects/ntc/ntc.js"
+        ></script>
+        <script type="text/javascript" src="index.js"></script>
+
         <link rel="icon" href="fish.svg" />
         <title>Pink Fish Golf</title>
     </head>
 
     <body>
         <header>
-            <h1>Pick a Pink</h1>
-            <p>
-                <script>
-                    for (var i = 0; i < 9; i++) document.write("pink ");
-                </script>
-            </p>
+            <h1 id="title">Pick a Pink</h1>
+            <p id="subtitle"></p>
         </header>
         <main>
-            <p>wawa</p>
+            <h2>Fight!</h2>
+            <p>
+                <script>
+                    for (var i = 0; i < 9; i++)
+                        document.write("very long text ");
+                </script>
+            </p>
+            <figure>
+                <img
+                    src="img/full-begin.png"
+                    alt="two stick figures, right one is dangerously pink"
+                />
+                <figcaption id="caption" style="text-align: left">
+                    caption
+                </figcaption>
+            </figure>
+            <p id="color-picker">
+                <label>Quick, pick a color :</label>
+                <input
+                    type="color"
+                    id="color-input"
+                    value="#123456"
+                    onchange="results()"
+                />
+            </p>
         </main>
 
         <footer>
-            <p>p6nj ®</p>
+            <p>pink ®</p>
+            <a href="#" onclick="rotate_title()">doink</a>
         </footer>
     </body>
 </html>
