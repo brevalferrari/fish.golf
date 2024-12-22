@@ -68,17 +68,17 @@ const rotate_title = () => {
         : variant === 2
           ? "Stop and Think"
           : "lihuqergilhuqionbopimuthnbsuinl";
-  const subtitle = document.getElementById("subtitle").innerHTML;
+  var subtitle = document.getElementById("subtitle");
   subtitle.innerHTML = "";
   for (var i = 0; i < 9; i++)
-    subtitle +=
-      variant === 0
+    subtitle.innerHTML +=
+      (variant === 0
         ? "pink"
         : variant === 1
           ? "twink"
           : variant === 2
             ? "think"
-            : "lihuqergilhuqionbopimuthnbsuinl";
+            : "lihuqergilhuqionbopimuthnbsuinl") + " ";
 };
 
 window.onload = rotate_title; // initial title
