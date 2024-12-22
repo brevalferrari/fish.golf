@@ -72,7 +72,5 @@ getJSON(
         });
       });
     }
-    document.getElementsByTagName("tbody")[0].innerHTML +=
-      '<tr><th colspan="4"><hr /></th></tr>';
   },
 );
