@@ -34,15 +34,15 @@
                 <div class="title-bar-controls">
                     <button
                         aria-label="Minimize"
-                        onclick="add_entry('MIN (x00508008)')"
+                        onclick="add_entry('AD HOMINEM (x00508008)')"
                     ></button>
                     <button
                         aria-label="Maximize"
-                        onclick="add_entry('MAX (x98466)')"
+                        onclick="add_entry('RED HERRING (x98466)')"
                     ></button>
                     <button
                         aria-label="Close"
-                        onclick="add_entry('CLOSE (x984651)')"
+                        onclick="add_entry('AD POPULUM (x984651)')"
                     ></button>
                 </div>
             </div>
@@ -128,7 +128,6 @@
                 .querySelectorAll("table.interactive")
                 .forEach((element) => {
                     element.addEventListener("click", (event) => {
-                        // add_entry("DONT_CLICK_ME (x66666)");
                         const highlightedClass = "highlighted";
                         const isRow = (element) =>
                             element.tagName === "TR" &&
@@ -152,6 +151,7 @@
                         if (newlySelectedRow) {
                             newlySelectedRow.classList.toggle(highlightedClass);
                         }
+                        add_entry("DONT_CLICK_ME (x66666)");
                     });
                 });
         </script>
