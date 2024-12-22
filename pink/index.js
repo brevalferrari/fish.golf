@@ -41,7 +41,7 @@ const results = () => {
   const color_name = hex2name(hex_color).toLowerCase();
   apply_gradient(hex_color);
   write_colorname(color_name);
-  change_image("https://fish.golf/pink/img/full-draw.png");
+  change_image("img/full-draw.png");
 };
 
 const reset_background = () => {
