@@ -55,16 +55,17 @@ const getTotalSize = (tree) => {
 };
 
 function add_listing(name, last_modified, size) {
-  document.getElementsByTagName("tbody")[0].innerHTML +=
+  document.getElementById("last").outerHTML =
     '<tr><td valign="top"><img src="index_files/folder.gif" alt="[DIR]" /></td><td><a href="https://' +
     name +
     '.fish.golf">' +
     name +
-    '</a></td><td align="right">' +
+    '/</a></td><td align="right">' +
     last_modified +
     '</td><td align="right">' +
     size +
-    "</td></tr>";
+    "</td></tr>" +
+    document.getElementById("last").outerHTML;
 }
 
 getJSON(
@@ -89,8 +90,8 @@ getJSON(
         `https://api.github.com/repos/p6nj/fish.golf/commits?path=index.html&page=1&per_page=1`,
         function (err, data1) {
           if (err === null) {
-            document.getElementsByTagName("tbody")[0].innerHTML +=
-              '<tr><td valign="top"><img src="index_files/folder.gif" alt="[DIR]" /></td><td><a href="https://fish.golf">/</a></td><td align="right">' +
+            document.getElementById("first").outerHTML +=
+              '<tr class="first"><td valign="top"><img src="index_files/folder.gif" alt="[DIR]" /></td><td><a href="https://fish.golf">./</a></td><td align="right">' +
               data1[0].commit.committer.date +
               '</td><td align="right">' +
               getTotalSize(data.tree) +
