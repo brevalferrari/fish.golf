@@ -40,6 +40,20 @@ const getSize = (tree, subdomain) => {
   );
 };
 
+const getTotalSize = (tree) => {
+  let totalSize = 0;
+
+  tree.forEach((item) => {
+    if (item.size !== undefined) totalSize += item.size;
+  });
+
+  return (
+    (totalSize / 1024).toLocaleString(undefined, {
+      maximumFractionDigits: 2,
+    }) + " KB"
+  );
+};
+
 function add_listing(name, last_modified, size) {
   document.getElementsByTagName("tbody")[0].innerHTML +=
     '<tr><td valign="top"><img src="index_files/folder.gif" alt="[DIR]" /></td><td><a href="https://' +
@@ -71,6 +85,19 @@ getJSON(
           add_listing(item, modif, getSize(data.tree, item));
         });
       });
+      getJSON(
+        `https://api.github.com/repos/p6nj/fish.golf/commits?path=index.html&page=1&per_page=1`,
+        function (err, data1) {
+          if (err === null) {
+            document.getElementsByTagName("tbody")[0].innerHTML +=
+              '<tr><td valign="top"><img src="index_files/folder.gif" alt="[DIR]" /></td><td><a href="https://fish.golf">/</a></td><td align="right">' +
+              data1[0].commit.committer.date +
+              '</td><td align="right">' +
+              getTotalSize(data.tree) +
+              "</td></tr>";
+          }
+        },
+      );
     }
   },
 );
