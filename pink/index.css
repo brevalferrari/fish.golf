@@ -48,3 +48,7 @@ body {
         transform: translateX(-100%);
     }
 }
+
+#results {
+    text-align: center;
+}
