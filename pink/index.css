@@ -2,6 +2,10 @@
     --accent: pink;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 /* stand proud!! */
 #prideflag {
     position: absolute;
@@ -20,4 +24,27 @@
 }
 #prideflag * {
     pointer-events: all;
+}
+
+#flag {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Start off the right edge */
+    transform: translateX(100%);
+    /* Animate to the left */
+    animation: scroll-left 0.5s ease;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
