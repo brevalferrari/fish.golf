@@ -68,6 +68,19 @@ function add_listing(name, last_modified, size) {
     document.getElementById("last").outerHTML;
 }
 
+function insert_listing(name, subdomain, last_modified, size) {
+  document.getElementById("first").outerHTML +=
+    '<tr><td valign="top"><img src="index_files/folder.gif" alt="[DIR]" /></td><td><a href="https://' +
+    subdomain +
+    '.fish.golf">' +
+    name +
+    '/</a></td><td align="right">' +
+    last_modified +
+    '</td><td align="right">' +
+    size +
+    "</td></tr>";
+}
+
 getJSON(
   "https://api.github.com/repos/p6nj/fish.golf/git/trees/main?recursive=1",
   function (err, data) {
@@ -76,7 +89,7 @@ getJSON(
       data.tree.forEach((item) => {
         if (item.type === "tree") {
           let subdomain = item.path.split("/")[0];
-          if (!subdomains.includes(subdomain)) {
+          if (subdomain !== "index" && !subdomains.includes(subdomain)) {
             subdomains.push(subdomain);
           }
         }
@@ -86,12 +99,15 @@ getJSON(
           add_listing(item, modif, getSize(data.tree, item));
         });
       });
+      getModificationDate("index", function (modif) {
+        insert_listing(".", "index", modif, getSize(data.tree, "index"));
+      });
       getJSON(
         `https://api.github.com/repos/p6nj/fish.golf/commits?path=index.html&page=1&per_page=1`,
         function (err, data1) {
           if (err === null) {
             document.getElementById("first").outerHTML +=
-              '<tr class="first"><td valign="top"><img src="index_files/folder.gif" alt="[DIR]" /></td><td><a href="https://fish.golf">./</a></td><td align="right">' +
+              '<tr class="first"><td valign="top"><img src="index_files/folder.gif" alt="[DIR]" /></td><td><a href="https://fish.golf">../</a></td><td align="right">' +
               data1[0].commit.committer.date +
               '</td><td align="right">' +
               getTotalSize(data.tree) +
