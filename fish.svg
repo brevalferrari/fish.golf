@@ -13,15 +13,9 @@
         path, circle {
             fill: black;
         }
-        svg {
-            background-color: white;
-        }
         @media (prefers-color-scheme: dark) {
             path, circle {
                 fill: white;
-            }
-            svg {
-                background-color: black;
             }
         }
     </style>
