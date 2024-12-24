@@ -75,5 +75,7 @@
 }
 main {
     color: #000;
+}
+html {
     overflow-x: hidden;
 }
