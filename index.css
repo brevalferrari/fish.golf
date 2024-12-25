@@ -102,7 +102,7 @@ main {
     color: #000;
 }
 
-a {
+main a {
     display: contents;
 }
 
@@ -111,4 +111,10 @@ main > img {
     image-rendering: pixelated;
     width: 88px;
     height: 31px;
+}
+
+div#trans {
+    display: block ruby;
+    text-align: center;
+    width: 100%;
 }
