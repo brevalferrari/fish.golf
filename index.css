@@ -22,7 +22,7 @@ main p {
 /*Time to finalise the cloud shape*/
 .cloud {
     width: 200px;
-    height: 60px;
+    height: 40px;
 
     border-radius: 200px;
     -moz-border-radius: 200px;
