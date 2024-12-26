@@ -5,6 +5,7 @@ html {
     font-smooth: never;
     text-shadow: rgba(255, 255, 255, 0.01) 0 0 1px;
     -webkit-font-smoothing: none;
+    image-rendering: pixelated;
 }
 
 body {
@@ -34,7 +35,6 @@ a:not(.normal) {
 }
 
 img {
-    image-rendering: pixelated;
     width: 88px;
     height: 31px;
 }
