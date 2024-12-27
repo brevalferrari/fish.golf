@@ -30,11 +30,11 @@ span {
     background-color: #030b14;
 }
 
-a:not(.normal) {
+main a:not(.normal) {
     display: contents;
 }
 
-img {
+main img {
     width: 88px;
     height: 31px;
 }
@@ -45,19 +45,19 @@ div#trans {
     width: 100%;
 }
 
-a {
+main a {
     text-decoration: none;
 }
 
-a:link,
-a:visited {
+main a:link,
+main a:visited {
     color: white;
     font-weight: bold;
     border: 1px solid white;
 }
 
-a:hover,
-a:active {
+main a:hover,
+main a:active {
     background-color: white;
     color: black;
 }
