@@ -1922,7 +1922,7 @@ const results = () => {
     if (color_name.includes("pink")) {
       results_h1.innerHTML = "EPIC WIN";
     } else if (color_name.includes("black")) {
-      results_h1.innerHTML = "EPIC FAIL";
+      results_h1.innerHTML = "EPIC BLACK";
     } else if (color_name.includes("white")) {
       results_h1.innerHTML = "EPIC RETREAT?";
     } else {
