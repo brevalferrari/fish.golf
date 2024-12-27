@@ -6,6 +6,7 @@ html {
     text-shadow: rgba(255, 255, 255, 0.01) 0 0 1px;
     -webkit-font-smoothing: none;
     image-rendering: pixelated;
+    background: url("bg.png") repeat;
 }
 
 body {
@@ -14,8 +15,6 @@ body {
     text-align: center;
     padding: 20px;
     color: white;
-    background: url("bg.png") repeat;
-    background-color: black;
 }
 
 h1 {
