@@ -27,7 +27,7 @@ p {
 
 span,
 #linuxring table {
-    background-color: #030b14;
+    background-color: #030b14 !important;
 }
 
 main a:not(.normal) {
@@ -69,5 +69,5 @@ main a:active {
 }
 
 #linuxring a {
-    color: white;
+    color: white !important;
 }
