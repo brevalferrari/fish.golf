@@ -25,7 +25,8 @@ p {
     margin: 10px 0 0;
 }
 
-span {
+span,
+#linuxring table {
     background-color: #030b14;
 }
 
@@ -65,4 +66,8 @@ main a:active {
 ::-moz-selection {
     background: transparent;
     text-shadow: 0px 0px 5px yellow;
+}
+
+#linuxring a {
+    color: white;
 }
