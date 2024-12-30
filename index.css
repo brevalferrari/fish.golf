@@ -39,7 +39,7 @@ span,
 }
 
 main {
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 
 main a:not(.normal) {
@@ -90,4 +90,11 @@ main a:active {
 
 .bonkiringdiv {
     margin: auto;
+}
+
+@media (min-width: 50em) {
+    main {
+        margin-right: 5em;
+        margin-left: 5em;
+    }
 }
