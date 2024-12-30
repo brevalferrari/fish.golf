@@ -1,4 +1,10 @@
+@font-face {
+    font-family: "Nouveau IBM";
+    src: url("Nouveau_IBM.ttf");
+}
+
 html {
+    font-family: "Nouveau IBM";
     margin: 0;
     padding: 0;
     text-rendering: optimizeLegibility;
@@ -19,6 +25,8 @@ body {
 
 h1 {
     margin: 0;
+    font-weight: normal;
+    font-size: 3em;
 }
 
 p {
@@ -28,6 +36,10 @@ p {
 span,
 #linuxring table {
     background-color: #030b14 !important;
+}
+
+main {
+    font-size: 1.8em;
 }
 
 main a:not(.normal) {
@@ -52,7 +64,6 @@ main a {
 main a:link,
 main a:visited {
     color: white;
-    font-weight: bold;
     border: 1px solid white;
 }
 
