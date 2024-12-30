@@ -76,3 +76,7 @@ main a:active {
 #linuxring table {
     border: solid;
 }
+
+.bonkiringdiv {
+    margin: auto;
+}
