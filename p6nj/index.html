@@ -51,6 +51,11 @@
                             <a href="#info" class="pure-menu-link">Info</a>
                         </li>
                         <li class="pure-menu-item">
+                            <a href="#location" class="pure-menu-link"
+                                >Location</a
+                            >
+                        </li>
+                        <li class="pure-menu-item">
                             <a href="#status" class="pure-menu-link">Status</a>
                         </li>
                         <li class="pure-menu-item">
@@ -149,6 +154,49 @@
                                     src="https://fish.golf/fishgolf1.gif"
                                     alt="fish.golf static button"
                             /></a>
+                        </div>
+                    </div>
+
+                    <h2 id="location" class="content-subhead">Location</h2>
+                    <p>This is where I post from :</p>
+                    <div class="pure-g">
+                        <div class="pure-u-1-1" style="height: 354px">
+                            <img
+                                id="lol"
+                                src="https://picsum.photos/536/354"
+                                alt="random picture with a red circle in it"
+                            /><canvas
+                                id="canvas"
+                                width="536px"
+                                height="354px"
+                            ></canvas>
+                            <script>
+                                const img = document.getElementById("lol");
+                                const cnvs = document.getElementById("canvas");
+
+                                img.onload = () => {
+                                    cnvs.style.position = "relative";
+                                    cnvs.style.top = "-362px";
+
+                                    var ctx = cnvs.getContext("2d");
+                                    ctx.beginPath();
+                                    let r = Math.floor(Math.random() * 51) + 10;
+                                    ctx.arc(
+                                        Math.floor(
+                                            Math.random() * (536 - r * 2),
+                                        ) + r,
+                                        Math.floor(
+                                            Math.random() * (354 - r * 2),
+                                        ) + r,
+                                        r,
+                                        0,
+                                        2 * Math.PI,
+                                    );
+                                    ctx.lineWidth = 4;
+                                    ctx.strokeStyle = "red";
+                                    ctx.stroke();
+                                };
+                            </script>
                         </div>
                     </div>
 
