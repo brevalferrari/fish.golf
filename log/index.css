@@ -1,10 +1,5 @@
-@font-face {
-    font-family: "Nouveau IBM";
-    src: url("https://fish.golf/Nouveau_IBM.ttf");
-}
-
 html {
-    font-family: "Nouveau IBM";
+    font-family: "Ubuntu Mono", serif;
     background-color: black;
     color: white;
 }
@@ -18,4 +13,8 @@ a:visited,
 a:focus,
 a:hover {
     color: white;
+}
+
+table {
+    width: 100%;
 }
