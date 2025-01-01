@@ -93,7 +93,7 @@ main a:active {
 }
 
 @media (min-width: 50em) {
-    main {
+    main div {
         margin-right: 5em;
         margin-left: 5em;
     }
