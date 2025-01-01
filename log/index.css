@@ -1,6 +1,21 @@
-html,
-select,
-option {
-    color: white;
+@font-face {
+    font-family: "Nouveau IBM";
+    src: url("https://fish.golf/Nouveau_IBM.ttf");
+}
+
+html {
+    font-family: "Nouveau IBM";
     background-color: black;
+    color: white;
+}
+
+body {
+    margin: 0;
+}
+
+a,
+a:visited,
+a:focus,
+a:hover {
+    color: white;
 }
