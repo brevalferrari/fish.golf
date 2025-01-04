@@ -33,9 +33,22 @@
         />
         <link rel="stylesheet" href="styles.css" />
         <script src="index.js"></script>
+        <link rel="preload" href="fr.js" as="script" />
+        <link rel="stylesheet" type="text/css" href="fr.css" />
+        <link
+            rel="preload"
+            href="https://fish.golf/explosion.gif"
+            as="image"
+            type="image/gif"
+        />
     </head>
     <body>
         <div id="layout">
+            <a id="fr" href="#"
+                ><img
+                    src="https://fish.golf/france-flag-round.gif"
+                    alt="france flag"
+            /></a>
             <!-- Menu toggle -->
             <a href="#menu" id="menuLink" class="menu-link">
                 <!-- Hamburger icon -->
@@ -44,47 +57,96 @@
 
             <div id="menu">
                 <div class="pure-menu">
-                    <a class="pure-menu-heading" href="#company">Menu</a>
+                    <a id="menu-menu" class="pure-menu-heading" href="#company"
+                        >Menu</a
+                    >
 
                     <ul class="pure-menu-list">
                         <li class="pure-menu-item">
-                            <a href="#info" class="pure-menu-link">Info</a>
+                            <a
+                                id="menu-info"
+                                href="#info"
+                                class="pure-menu-link"
+                                >Info</a
+                            >
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#location" class="pure-menu-link"
+                            <a
+                                id="menu-location"
+                                href="#location"
+                                class="pure-menu-link"
                                 >Location</a
                             >
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#status" class="pure-menu-link">Status</a>
+                            <a
+                                id="menu-status"
+                                href="#status"
+                                class="pure-menu-link"
+                                >Status</a
+                            >
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#facts" class="pure-menu-link"
+                            <a
+                                id="menu-facts"
+                                href="#facts"
+                                class="pure-menu-link"
                                 >Quick facts</a
                             >
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#books" class="pure-menu-link">Books</a>
+                            <a
+                                id="menu-books"
+                                href="#books"
+                                class="pure-menu-link"
+                                >Books</a
+                            >
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#series" class="pure-menu-link">Series</a>
+                            <a
+                                id="menu-series"
+                                href="#series"
+                                class="pure-menu-link"
+                                >Series</a
+                            >
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#music" class="pure-menu-link">Music</a>
+                            <a
+                                id="menu-music"
+                                href="#music"
+                                class="pure-menu-link"
+                                >Music</a
+                            >
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#links" class="pure-menu-link">Links</a>
+                            <a
+                                id="menu-links"
+                                href="#links"
+                                class="pure-menu-link"
+                                >Links</a
+                            >
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#pics" class="pure-menu-link">Pics</a>
+                            <a
+                                id="menu-pics"
+                                href="#pics"
+                                class="pure-menu-link"
+                                >Pics</a
+                            >
                         </li>
                         <li class="pure-menu-item">
-                            <a href="#contact" class="pure-menu-link"
-                                >Contact me pls!</a
+                            <a
+                                id="menu-contact"
+                                href="#contact"
+                                class="pure-menu-link"
+                                >Contact</a
                             >
                         </li>
                         <li class="pure-menu-item" hidden>
-                            <a href="#drawings" class="pure-menu-link"
+                            <a
+                                id="menu-drawings"
+                                href="#drawings"
+                                class="pure-menu-link"
                                 >Drawings (secret)</a
                             >
                         </li>
@@ -94,8 +156,8 @@
 
             <div id="main">
                 <div class="header">
-                    <h1>Hewwo!!</h1>
-                    <h2>This is my personal page :3</h2>
+                    <h1 id="title">Hewwo!!</h1>
+                    <h2 id="subtitle">This is my personal page :3</h2>
                 </div>
 
                 <div class="pure-g apart">
@@ -127,19 +189,19 @@
                         </div>
                         <div class="pure-u-1-4"></div>
                         <div class="pure-u-1-2">
-                            <p>
+                            <p id="persona">
                                 This is the name of my online persona. It comes
                                 from a strange
                                 <a href="https://youtu.be/Cu6wlaaf-ck">video</a>
                                 about the ball from the videogame
                                 <a href="https://www.ponggame.org/">Pong</a>.
                             </p>
-                            <p>
+                            <p id="description">
                                 I'm a tall French pan enboy twink (he/him/*)
-                                trying his best to help everyone in his quest to
-                                find a place in this giant world.
+                                trying his best to help everyone in his main
+                                quest: to find a place in this giant world.
                             </p>
-                            <p>
+                            <p id="pronouns">
                                 You can check out my
                                 <a
                                     href="https://en.pronouns.page/@p6nj"
@@ -149,13 +211,15 @@
                                 >
                                 if you want.
                             </p>
-                            <p>Here's a link back home:</p>
+                            <p id="home">Here's a link back home:</p>
                             <a href="https://fish.golf" title="home">
                                 <img
                                     src="https://fish.golf/fishgolf1.gif"
                                     alt="fish.golf static button"
                             /></a>
-                            <p>I am also compelled to provide you this link:</p>
+                            <p id="apioform">
+                                I am also compelled to provide you this link:
+                            </p>
                             <a
                                 href="https://citrons.xyz/a/memetic-apioform-page.html"
                                 ><img
@@ -165,7 +229,7 @@
                     </div>
 
                     <h2 id="location" class="content-subhead">Location</h2>
-                    <p>This is where I post from :</p>
+                    <p id="location-p">This is where I post from :</p>
                     <div class="pure-g">
                         <div class="pure-u-1-1" style="height: 354px">
                             <img
@@ -208,8 +272,8 @@
                     </div>
 
                     <h2 id="status" class="content-subhead">Status</h2>
-                    <h3>12/29/2024 - hello world</h3>
-                    <p>
+                    <h3 id="news-helloworld-h">12/29/2024 - hello world</h3>
+                    <p id="news-helloworld-p">
                         My first status. I'm currently attending Québec
                         University at Chicoutimi as a Computer Science exchange
                         student and actively looking for an internship in Québec
@@ -218,26 +282,26 @@
                     </p>
 
                     <h2 id="facts" class="content-subhead">Quick facts</h2>
-                    <p>Here are some quick facts :</p>
+                    <p id="facts-p">Here are some quick facts :</p>
                     <ul>
-                        <li>
+                        <li id="facts-carl">
                             <a href="https://www.youtube.com/@CarlSagan42"
                                 >CarlSagan42</a
                             >
                             taught me English (fan since ~2016 <3)
                         </li>
-                        <li>You're awesome</li>
-                        <li>
+                        <li id="facts-you">You're awesome</li>
+                        <li id="facts-ptype">
                             I'm
                             <a
                                 href="https://www.16personalities.com/profiles/enfp-t/o/3xd6htki3"
                                 >ENFP-T</a
                             >!
                         </li>
-                        <li>I never lie</li>
-                        <li>I lie sometimes</li>
-                        <li>I am real (probably)</li>
-                        <li>
+                        <li id="facts-nolie">I never lie</li>
+                        <li id="facts-lie">I lie sometimes</li>
+                        <li id="facts-real">I am real (probably)</li>
+                        <li id="facts-orchestra">
                             Some musicians in big orchestras feel useless. They
                             are part of the whole thing for sure but they feel
                             like they're never heard. We do notice when they're
@@ -248,11 +312,11 @@
                             listen very carefully and sure enough you will hear
                             them all. They are one.
                         </li>
-                        <li>
+                        <li id="facts-gentoo">
                             I use Gentoo after about ~18 distros (I have spare
                             time)
                         </li>
-                        <li>
+                        <li id="facts-kernel">
                             No I don't have a custom kernel! Just some
                             patches...
                         </li>
@@ -261,7 +325,7 @@
                     <!-- ඞ -->
 
                     <h2 id="books" class="content-subhead">Books</h2>
-                    <p>
+                    <p id="books-p">
                         As a little chimp I used to read Ray Bradbury novels
                         translated to French. Now my all-time favorite is
                         Douglas Adams' good old Hitch-Hiker's Guide to the
@@ -270,14 +334,14 @@
                     </p>
 
                     <h2 id="series" class="content-subhead">Series</h2>
-                    <p>
+                    <p id="series-p">
                         I'm a Legion FX fan. When it comes to anime, I love
                         Lain. Nichijou is the cutest thing ever. Azumanga Daioh
                         is great. Evangelion is peak.
                     </p>
 
                     <h2 id="music" class="content-subhead">Music</h2>
-                    <p>
+                    <p id="music-tastes">
                         Silly music playlists. They are my fuel. Waiter, more
                         <a href="https://youtu.be/q4i05EaML44">glorp</a>
                         please! 3 gazillion
@@ -289,7 +353,7 @@
                             >Telepath</a
                         >.
                     </p>
-                    <p>
+                    <p id="music-play">
                         I also enjoy... Playing music!<br />
                         I have professional piano skills ("I got paid three
                         times" level 💪), can sing almost anything (training on
@@ -300,7 +364,7 @@
                         Watch me pounding chains on the ground
                         <a href="https://youtu.be/CnY2KjfxM5k">here</a>!
                     </p>
-                    <p>
+                    <p id="music-make">
                         I made some music on Bandcamp but the last track is a
                         mistake<a id="back" href="#asterisk">*</a> and the only
                         other thing is an old sloppy album. See
@@ -308,7 +372,7 @@
                     </p>
 
                     <h2 id="links" class="content-subhead">Links</h2>
-                    <p>
+                    <p id="links-p">
                         All my links are on
                         <a href="https://p6nj.carrd.co/" title="Carrd.co"
                             >Carrd</a
@@ -317,7 +381,9 @@
                     <img src="detour.gif" alt="detour" />
 
                     <h2 id="pics" class="content-subhead">Pics</h2>
-                    <p>Here are some proofs that I'm actually real :</p>
+                    <p id="pics-p">
+                        Here are some proofs that I'm actually real :
+                    </p>
                     <div class="pure-g">
                         <div class="pure-u-1-2">
                             <img class="pure-img" src="mustachio.jpg" />
@@ -334,7 +400,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>eMail</td>
+                                <td id="contact-mail">eMail</td>
                                 <td>
                                     <a href="mailto:p6nj@fish.golf"
                                         >p6nj@fish.golf</a
@@ -346,7 +412,7 @@
                                 <td>p6nj</td>
                             </tr>
                             <tr>
-                                <td>telepathy</td>
+                                <td id="contact-telepathy">telepathy</td>
                                 <td>...</td>
                             </tr>
                         </tbody>
@@ -355,20 +421,22 @@
                     <h2 id="drawings" class="content-subhead" hidden>
                         Drawings (secret)
                     </h2>
-                    <p hidden>Ah! You scared me.</p>
-                    <p hidden>
+                    <p id="drawings-scared" hidden>Ah! You scared me.</p>
+                    <p id="drawings-p" hidden>
                         Well, looks like you found some of my drawings. They're
                         from notebooks I had when I was 11 to 15 years old.<br />
                         I filled 5 notebooks, from 50 pages to 100 each.
                     </p>
-                    <p hidden>
+                    <p id="drawings-context" hidden>
                         You could find me during that time at the playground
                         alone on a bench, folded like a shrimp, focused, filling
                         these with pencil drawings, games inspired from
                         magazines I made for myself and small essays on life and
                         everything.
                     </p>
-                    <p hidden>Life as a loner was hard but it didn't matter.</p>
+                    <p id="drawings-life" hidden>
+                        Life as a loner was hard but it didn't matter.
+                    </p>
                     <div class="pure-g" hidden>
                         <div class="pure-u-1-4" hidden>
                             <img
@@ -399,7 +467,7 @@
                             />
                         </div>
                     </div>
-                    <p hidden>
+                    <p id="drawings-caption" hidden>
                         The water droplet was my main character, more like a
                         species: Miramiro. The creature was inspired by a
                         drawing from my older sibling, who's also my favorite
@@ -431,11 +499,12 @@
                             with an increasigly high roof. Go back:
                             <a href="#back">↑</a>
                         </p>
-                        <p style="width: 100%">
-                            This site is built with 🦶 using Pure v3.0.0
+                        <p id="feet" style="width: 100%">
+                            This site is built with 🦶 using Pure CSS v3.0.0
                         </p>
                         <div>
                             <button
+                                id="secret"
                                 class="pure-button"
                                 onclick="reveal_secrets()"
                             >
@@ -448,6 +517,7 @@
         </div>
 
         <script src="ui.js"></script>
+        <script src="fr.js"></script>
     </body>
 </html>
 <!-- p6nj -->
