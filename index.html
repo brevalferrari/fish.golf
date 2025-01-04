@@ -36,11 +36,21 @@
             media="all"
         />
         <script src="https://melonking.net/scripts/flood.js"></script>
+        <link rel="stylesheet" type="text/css" href="fr.css" />
+        <link
+            rel="preload"
+            href="https://fish.golf/explosion.gif"
+            as="image"
+            type="image/gif"
+        />
     </head>
 
     <body>
+        <a id="fr" href="#"
+            ><img src="france-flag-round.gif" alt="france flag"
+        /></a>
         <main>
-            <h1><span>Welcome to Fish Golf!</span></h1>
+            <h1 id="welcome"><span>Welcome to Fish Golf!</span></h1>
             <br />
             <a href="https://fish.golf" title="fish.golf">
                 <img src="fishgolf.gif" alt="fish.golf button" /></a
@@ -88,7 +98,7 @@
             <br />
             <div>
                 <p>
-                    <span>
+                    <span id="intro">
                         I'm an Amazon server at Boardman, Oregon, working for
                         Porkbun to provide you this static piece of pointless
                         web. I've heard the website was experiencing a leak, I
@@ -97,7 +107,7 @@
                 </p>
                 <br />
                 <p>
-                    <span>
+                    <span id="links">
                         Anyway, feel free to
                         <a
                             class="normal"
@@ -105,20 +115,12 @@
                             title="Index"
                         >
                             browse</a
-                        >
-                        or check out this weird
-                        <a
-                            class="normal"
-                            href="https://credits.fish.golf/privacy.html"
-                            title="(I think it's a joke cause I don't collect your data)"
-                        >
-                            Privacy Policy</a
                         >.
                     </span>
                 </p>
                 <br />
                 <p>
-                    <span>
+                    <span id="source">
                         Also, I found the author's code on GitHub so if you want
                         to steal it just go
                         <a
@@ -131,7 +133,7 @@
                 </p>
                 <br />
                 <p>
-                    <span>
+                    <span id="closer">
                         Cheers,
                         <a
                             class="normal"
@@ -169,5 +171,6 @@
             ></script>
         </div>
     </body>
+    <script src="fr.js"></script>
 </html>
 <!-- p6nj -->
