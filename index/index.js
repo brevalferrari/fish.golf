@@ -142,12 +142,13 @@ getJSON(
       getFileModificationDate(
         "index%2Fheav_memetic_image.png",
         (last_modified) => {
-          document.getElementById("first").outerHTML +=
+          document.getElementById("last").outerHTML +=
             '<tr class="first"><td valign="top"><img src="img/unknown.gif" alt="[FILE]" /></td><td><a href="heav_memetic_image.png">heav_memetic_image.png</a></td><td align="right">' +
             last_modified +
             '</td><td align="right">' +
             getFileSize(data.tree, "index/heav_memetic_image.png") +
-            "</td></tr>";
+            "</td></tr>" +
+            document.getElementById("last").outerHTML;
         },
       );
     }
