@@ -24,6 +24,19 @@ const getModificationDate = (subdomain, callback) => {
   );
 };
 
+const getFileModificationDate = (path, callback) => {
+  getJSON(
+    `https://api.github.com/repos/p6nj/fish.golf/commits?path=${path}&page=1&per_page=1`,
+    function (err, data) {
+      if (err === null) {
+        callback(data[0].commit.committer.date);
+      } else {
+        console.error(err);
+      }
+    },
+  );
+};
+
 const getSize = (tree, subdomain) => {
   let totalSize = 0;
 
@@ -38,6 +51,22 @@ const getSize = (tree, subdomain) => {
       maximumFractionDigits: 2,
     }) + " KB"
   );
+};
+
+const getFileSize = (tree, path) => {
+  let totalSize = 0;
+
+  tree.forEach((item) => {
+    if (item.path == path) {
+      return (
+        (item.size / 1024).toLocaleString(undefined, {
+          maximumFractionDigits: 2,
+        }) + " KB"
+      );
+    }
+  });
+
+  return "?";
 };
 
 const getTotalSize = (tree) => {
@@ -56,7 +85,7 @@ const getTotalSize = (tree) => {
 
 function add_listing(name, last_modified, size) {
   document.getElementById("last").outerHTML =
-    '<tr><td valign="top"><img src="index_files/folder.gif" alt="[DIR]" /></td><td><a href="https://' +
+    '<tr><td valign="top"><img src="img/folder.gif" alt="[DIR]" /></td><td><a href="https://' +
     name +
     '.fish.golf">' +
     name +
@@ -70,7 +99,7 @@ function add_listing(name, last_modified, size) {
 
 function insert_listing(name, subdomain, last_modified, size) {
   document.getElementById("first").outerHTML +=
-    '<tr><td valign="top"><img src="index_files/folder.gif" alt="[DIR]" /></td><td><a href="https://' +
+    '<tr><td valign="top"><img src="img/folder.gif" alt="[DIR]" /></td><td><a href="https://' +
     subdomain +
     '.fish.golf">' +
     name +
@@ -102,17 +131,23 @@ getJSON(
       getModificationDate("index", function (modif) {
         insert_listing(".", "index", modif, getSize(data.tree, "index"));
       });
-      getJSON(
-        `https://api.github.com/repos/p6nj/fish.golf/commits?path=index.html&page=1&per_page=1`,
-        function (err, data1) {
-          if (err === null) {
-            document.getElementById("first").outerHTML +=
-              '<tr class="first"><td valign="top"><img src="index_files/folder.gif" alt="[DIR]" /></td><td><a href="https://fish.golf">../</a></td><td align="right">' +
-              data1[0].commit.committer.date +
-              '</td><td align="right">' +
-              getTotalSize(data.tree) +
-              "</td></tr>";
-          }
+      getFileModificationDate("index.html", (last_modified) => {
+        document.getElementById("first").outerHTML +=
+          '<tr class="first"><td valign="top"><img src="img/folder.gif" alt="[DIR]" /></td><td><a href="https://fish.golf">../</a></td><td align="right">' +
+          last_modified +
+          '</td><td align="right">' +
+          getTotalSize(data.tree) +
+          "</td></tr>";
+      });
+      getFileModificationDate(
+        "index%2Fheav_memetic_image.png",
+        (last_modified) => {
+          document.getElementById("first").outerHTML +=
+            '<tr class="first"><td valign="top"><img src="img/unknown.gif" alt="[FILE]" /></td><td><a href="heav_memetic_image.png">heav_memetic_image.png</a></td><td align="right">' +
+            last_modified +
+            '</td><td align="right">' +
+            getFileSize(data.tree, "index/heav_memetic_image.png") +
+            "</td></tr>";
         },
       );
     }
