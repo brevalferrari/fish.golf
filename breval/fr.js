@@ -9,7 +9,7 @@ const translation = {
   "menu-pics": "Photos",
   "menu-drawings": "Dessins (secret)",
   persona:
-    "C'est le nom de ma présence sur internet. Il vient d'une <a href='https://youtu.be/Cu6wlaaf-ck'>vidéo</a> étrange sur la balle du jeu vidéo <a href='https://www.ponggame.org/'>Pong</a>.",
+    "C'est mon vrai nom.",
   description:
     "Je suis un long Français pan et non-binaire (pronoms masculins) qui fait de son mieux pour aider tout le monde dans sa quête principale : trouver une place dans ce monde énorme.",
   pronouns:
