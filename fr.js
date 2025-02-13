@@ -5,7 +5,7 @@ const translation = {
   links:
     "Bref, d'ici vous pouvez accéder à l'<a class='normal' href='https://index.fish.golf' title='Index'>index</a> du site si vous voulez.",
   source:
-    "J'ai aussi trouvé le <a class='normal' href='https://github.com/p6nj/fish.golf' title=`Allez-y, c'est gratuit!`>code source</a> de ce site sur le compte GitHub de l'auteur ; n'hésitez pas à voler son code. Il a pas l'air de trop s'en préoccuper.",
+    "J'ai aussi trouvé le <a class='normal' href='https://github.com/brevalferrari/fish.golf' title=`Allez-y, c'est gratuit!`>code source</a> de ce site sur le compte GitHub de l'auteur ; n'hésitez pas à voler son code. Il a pas l'air de trop s'en préoccuper.",
   closer: "Cordialement, 35.155.7.183",
 };
 

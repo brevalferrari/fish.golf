@@ -15,7 +15,7 @@ const getJSON = function (url, callback) {
 
 const getModificationDate = (subdomain, callback) => {
   getJSON(
-    `https://api.github.com/repos/p6nj/fish.golf/commits?path=${subdomain}%2Findex.html&page=1&per_page=1`,
+    `https://api.github.com/repos/brevalferrari/fish.golf/commits?path=${subdomain}%2Findex.html&page=1&per_page=1`,
     function (err, data) {
       if (err === null) {
         callback(data[0].commit.committer.date);
@@ -26,7 +26,7 @@ const getModificationDate = (subdomain, callback) => {
 
 const getFileModificationDate = (path, callback) => {
   getJSON(
-    `https://api.github.com/repos/p6nj/fish.golf/commits?path=${path}&page=1&per_page=1`,
+    `https://api.github.com/repos/brevalferrari/fish.golf/commits?path=${path}&page=1&per_page=1`,
     function (err, data) {
       if (err === null) {
         callback(data[0].commit.committer.date);
@@ -111,7 +111,7 @@ function insert_listing(name, subdomain, last_modified, size) {
 }
 
 getJSON(
-  "https://api.github.com/repos/p6nj/fish.golf/git/trees/main?recursive=1",
+  "https://api.github.com/repos/brevalferrari/fish.golf/git/trees/main?recursive=1",
   function (err, data) {
     if (err === null) {
       let subdomains = [];

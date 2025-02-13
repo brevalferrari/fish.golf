@@ -50,7 +50,7 @@ const translation = {
   Tu peux me voir fouetter la scène avec une chaîne en métal ici sur <a href="https://youtu.be/CnY2KjfxM5k">YouTube</a>.`,
   "music-make": `J'ai fait un peu de musique sur Bandcamp mais le dernier morceau est une erreur<a id="back" href="#asterisk">*</a> et tout ce qu'on peut y trouver d'autre c'est un vieil album vaseux. Ma page est dans mes <a href="#links">liens</a>.`,
   links: "Liens",
-  "links-p": `Tous mes liens sont sur <a href="https://p6nj.carrd.co/" title="Carrd.co">Carrd</a> (page en anglais).`,
+  "links-p": `Tous mes liens sont sur <a href="https://breval.carrd.co/" title="Carrd.co">Carrd</a> (page en anglais).`,
   pics: "Photos",
   "pics-p": "Voici quelques preuves que j'existe :",
   "contact-telepathy": "Télépathie",

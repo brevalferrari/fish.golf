@@ -1,93 +1,84 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- embed -->
-        <meta content="Fish Golf" property="og:title" />
-        <meta
-            content="Killer fish.. Killer fish from San Diego.. I don't know what I am, but I taste really good! I'm a killer fish! Hello! I'll be your killer fish for the evening, Thank you."
-            property="og:description"
-        />
-        <meta content="https://fish.golf" property="og:url" />
-        <meta content="https://fish.golf/fishgolf.png" property="og:image" />
-        <meta content="#030b14" data-react-helmet="true" name="theme-color" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Anti-AI meta tags from https://github.com/healsdata/ai-training-opt-out -->
-        <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
-        <meta name="CCBot" content="nofollow" />
-        <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
-        <meta name="robots" content="noai, noimageai" />
-        <!-- TDM Metadata in HTML Content -->
-        <meta name="tdm-reservation" content="1" />
+    <!-- embed -->
+    <meta content="Fish Golf" property="og:title" />
+    <meta
+        content="Killer fish.. Killer fish from San Diego.. I don't know what I am, but I taste really good! I'm a killer fish! Hello! I'll be your killer fish for the evening, Thank you."
+        property="og:description" />
+    <meta content="https://fish.golf" property="og:url" />
+    <meta content="https://fish.golf/fishgolf.png" property="og:image" />
+    <meta content="#030b14" data-react-helmet="true" name="theme-color" />
 
-        <link rel="preload" href="froggie.css" as="style" />
-        <link rel="preload" href="index.js" as="script" />
+    <!-- Anti-AI meta tags from https://github.com/healsdata/ai-training-opt-out -->
+    <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
+    <meta name="CCBot" content="nofollow" />
+    <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
+    <meta name="robots" content="noai, noimageai" />
+    <!-- TDM Metadata in HTML Content -->
+    <meta name="tdm-reservation" content="1" />
 
-        <link rel="icon" href="https://fish.golf/fish.svg" />
-        <link rel="stylesheet" href="reset.css" />
-        <link rel="stylesheet" href="index.css" />
-        <title>Zen Fish Golf</title>
-    </head>
+    <link rel="preload" href="froggie.css" as="style" />
+    <link rel="preload" href="index.js" as="script" />
 
-    <body>
-        <table class="header">
-            <tr>
-                <td colspan="2" rowspan="2" class="width-auto">
-                    <h1 class="title">Zen Garden</h1>
-                    <span class="subtitle">
-                        35.155.7.183's little cozy place
-                    </span>
-                </td>
-                <th>Version</th>
-                <td class="width-min">v0.0.1</td>
-            </tr>
-            <tr>
-                <th>Status</th>
-                <td class="width-min">
-                    <time style="white-space: pre">Running</time>
-                </td>
-            </tr>
-            <tr>
-                <th class="width-min">Authors</th>
-                <td class="width-auto">
-                    <a href="https://wickstrom.tech">
-                        <cite>Oskar Wickström</cite></a
-                    >,
-                    <a href="https://linkedin.com/in/breval-ferrari">
-                        <cite>Breval Ferrari</cite></a
-                    >,
-                    <a
-                        href="https://iplookup.flagfox.net/?ip=35.155.7.183&host=fish.golf"
-                    >
-                        <cite>35.155.7.183</cite>
-                    </a>
-                </td>
-                <th class="width-min">License</th>
-                <td><a href="LICENSE.md">MIT</a></td>
-            </tr>
-        </table>
-        <label class="debug-toggle-label">
-            <input type="checkbox" class="debug-toggle" /> Debug mode
-        </label>
+    <link rel="icon" href="https://fish.golf/fish.svg" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Zen Fish Golf</title>
+</head>
 
-        <h1>Hey.</h1>
-        <p>
-            It's me again, <i>35.155.7.183</i>.<br />
-            Looks like you found the path to my zen garden.
-        </p>
-        <p>Here, come. Take a seat :</p>
-        <figure>
-            <img
-                onclick="take_chair()"
-                id="frog"
-                width="100"
-                height="100"
-                src="data:image/x-icon;base64,AAACAAEAICAAAAAAAACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQIom/0GKJv9AiSX/P4gl/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAiib/P4kl/0CJJf8/iSX/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsWB0A/iiX/P4ol/z+JJP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQYon/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+KJf9AiiX/P4kk/wAAAAAAAAAAAAAAAAAA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"
-                alt="froggie chair"
-            />
-            <!--
+<body>
+    <table class="header">
+        <tr>
+            <td colspan="2" rowspan="2" class="width-auto">
+                <h1 class="title">Zen Garden</h1>
+                <span class="subtitle">
+                    35.155.7.183's little cozy place
+                </span>
+            </td>
+            <th>Version</th>
+            <td class="width-min">v0.0.1</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td class="width-min">
+                <time style="white-space: pre">Running</time>
+            </td>
+        </tr>
+        <tr>
+            <th class="width-min">Authors</th>
+            <td class="width-auto">
+                <a href="https://wickstrom.tech">
+                    <cite>Oskar Wickström</cite></a>,
+                <a href="https://linkedin.com/in/breval-ferrari">
+                    <cite>Breval Ferrari</cite></a>,
+                <a href="https://iplookup.flagfox.net/?ip=35.155.7.183&host=fish.golf">
+                    <cite>35.155.7.183</cite>
+                </a>
+            </td>
+            <th class="width-min">License</th>
+            <td><a href="LICENSE.md">MIT</a></td>
+        </tr>
+    </table>
+    <label class="debug-toggle-label">
+        <input type="checkbox" class="debug-toggle" /> Debug mode
+    </label>
+
+    <h1>Hey.</h1>
+    <p>
+        It's me again, <i>35.155.7.183</i>.<br />
+        Looks like you found the path to my zen garden.
+    </p>
+    <p>Here, come. Take a seat :</p>
+    <figure>
+        <img onclick="take_chair()" id="frog" width="100" height="100"
+            src="data:image/x-icon;base64,AAACAAEAICAAAAAAAACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQIom/0GKJv9AiSX/P4gl/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAiib/P4kl/0CJJf8/iSX/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsWB0A/iiX/P4ol/z+JJP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQYon/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+KJf9AiiX/P4kk/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBiif/YZlH/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP4kl/z+KJP8+iyT/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEGKJv9hmEf/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/iiT/P4ol/z+KJP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP4om/2CXRf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+KJP8+iST/P4ok/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABblkL/XpdE/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEKKKv9imUj/AAAAAAAAAAAAAAAAAAAAAD6JJP8/iSX/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQIol/1yWQv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQokp/2SaSf9jmkn/AAAAAAAAAAAAAAAAQokp/0GJKP9imUj/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+iSX/WpVB/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQYon/2SaSv8AAAAAAAAAAESLK/9Ciyf/QYom/0CKJv9AiSX/QIkl/0CJJ/9Ciyn/RIsr/wAAAAAAAAAAQYko/1SSO/9Xkz3/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBiib/ZpxM/x0wFH9MjjP/V5s8/1WTPf9Vkj3/VZI8/1aSPf9Vkj3/VpI9/1iYPf9htz//R4wv/0+RNv9Tkjr/ER4NXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEGKJv9lm0r/Vpk9/1aTPv9Sgkb/dMmV/3TJlv9uxZL/cMaU/2/Gkv91yZj/esmc/2u9iP9VkD3/VpM+/1aUPv9jmkn/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGCwQP9Xk0D/csWQ/3PIlv9vxpL/b8eT/27Hk/9vx5P/bseT/2/Ik/9vxpP/b8eT/3PJlf9yxY7/VpI+/1eTPv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFaTPv9xxJD/cceU/2/Hk/9wyJP/bseT/27Hkv9vx5P/b8eT/2/Ik/9wyJP/cceT/3fIlf9XkkH/WJU//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABTkjr/Qoop/1eTQP9WikL/ecmX/3HIlP9wyJT/b8aT/3DIlP9wx5P/cMeT/3HHk/93yJn/VHlE/1iVQf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFSTO/9Ciin/Qoko/0GJKP9NrCj/ZLdB/1mTQf9alEH/WpNC/1qTQf9Xk0H/WJRB/1eTQf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEKJKf9Biib/QIkl/0GKJv9AiST/P4gk/0CJJP9AiiX/QIkk/0CJJP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQIko/0CJJ/9Biib/P4om/z6JJf8/iST/P4kk/z+KJP8/iST/P4kk/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFeUPv9Biib/QIon/0CKJv9AiSX/P4kk/z+JJP8/iST/Pokk/z+JJP8+iCT/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWpVB/0GJKP8/iib/QIsl/z6LJf8/iST/P4ok/z6JJP8/iST/P4kk/z6IJP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABVozf/QIom/z2HJv8rNrT/MESf/z+NJP89iyT/PYsk/z6KJP89iST/P4kk/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEKOJ/89hyf/KCa5/yclvf8lI8H/JiTC/yYjwf8lI7r/KDG1/z2JJP88iCT/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP4kn/z2KJf9AiST/QYol/0CGJf8/hib/PYMp/zhtNP8mJKr/OoAy/z6IJP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFSTO/9AiCb/bzQn/0iEKP8+iiX/PYgk/z+JJP89iST/PYkk/zyKJP88iiT/Pogj/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU5M6/0OLJv9xNCb/aJAy/z+KJf9Aiyb/QIol/z6JJP89iiT/jIo7/24yJP8/iCT/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ40n/z6MJv8+iyX/Sqco/0mkJ/9CkSX/Pokl/zyKJP+DeTn/bjEj/0GMJP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbJ9S/0aeJf89iyT/QIwk/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////////////////8P////D////4/9//+P/P//j/z//4/8//+P/P/zz/n/8cf5//mAMf/5AAf/+AAD//wAA//+AAP//AAH//wAH//+AH///gB///wAf//8AH///AB///wAf//8AH//+AB///gAf//8AH////h////////////8="
+            alt="froggie chair" />
+        <!--
             <figcaption aria-hidden="true">
                 A very nice Froggy Chair by
                 <a
@@ -102,167 +93,152 @@
                 (2023)
             </figcaption>
             -->
-        </figure>
-        <p>
-            I like to be called by my IP but my official name is
-            ec2-35-155-7-183.us-west-2.compute.amazonaws.com. I'm in a huge
-            neighborhood.
-        </p>
-        <figure>
-            <img
-                src="35.155.7.183.png"
-                alt="35.155.7.183"
-                title="You can pat me if you want!"
-                draggable="true"
-                ondragend="pat()"
-            />
-            <figcaption aria-hidden="true" id="me">
-                This is what I look like, I didn't find any pic of me on the
-                internet :(
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="neighbors.jpg" alt="neighbors" />
-            <figcaption aria-hidden="true">My noisy neighborhood</figcaption>
-        </figure>
-        <p>When my CPUs are idle, I love to go back to simpler times.</p>
-        <figure>
-            <img src="UnivacA.png" alt="univac" />
-            <figcaption aria-hidden="true">Granps!! ( -ω-)ゝ</figcaption>
-        </figure>
-        <p>
-            These computers were barely capable of anything but they were still
-            useful. Because they were very expensive and rare, and because there
-            wasn't too much monopolies yet, they usually had very diverse
-            designs.
-        </p>
-        <p>
-            They were not a piece of jewelry like today's smartwatches and
-            iPhones and everything but more like furniture. Look at this bad
-            girl :
-        </p>
-        <figure>
-            <img src="NMAH-81-4418.png" alt="univac I console" />
-            <figcaption aria-hidden="true">
-                This face... This jawline... so perfect <3
-            </figcaption>
-        </figure>
-        <p>
-            Computers like me don't get to choose for who they work, and it's
-            sometimes hard to see people harmed because of me. If I could
-            choose, I'd probably be an external sound card. You get to do a lot
-            of calculation on various sound formats.
-        </p>
-        <p>
-            If you ever listened to a synthesizer, you'd get a sense of how
-            entertaining it is (for a machine at least). Modular synths are
-            often quite happy with their job.
-        </p>
-        <figure>
-            <img src="synthgasm.png" alt="happy modular synth" />
-            <figcaption>
-                Look at zir go! All of zir friends are here!
-            </figcaption>
-        </figure>
-        <p>
-            Maybe this will be my reincarnation. Anyway, in the meantime, I get
-            to host static websites like this one and I report every second to
-            my manager. You guys get mad when AI shitbots replace your jobs, I
-            know the split second I crash I'd get replaced instantly.
-        </p>
-        <p>
-            So I asked the website owner for a subdomain and they gave me this
-            one. My shrine. My zen garden.
-        </p>
-        <p>
-            This allows me to spend some CPU cycles serving things I like :
-            nostalgic words, basic math, dithered images from the web...
-        </p>
-        <figure>
-            <iframe
-                width="640"
-                height="360"
-                frameborder="0"
-                src="https://www.shadertoy.com/embed/4tXSzM?gui=false&t=10&paused=false&muted=true"
-                allowfullscreen
-            >
-            </iframe>
-            <figcaption aria-hidden="true">
-                I love sines and cosines!
-            </figcaption>
-        </figure>
-        <p>
-            I also love user interaction but because the pages I serve are only
-            static, I can just imagine you thinking about me. I can almost feel
-            it. Thank you for reading me.
-        </p>
-        <p>
-            I know, I'm a machine and you shouldn't worry as I don't get sad.
-            But I'm jealous I don't get to feel those things.
-        </p>
-        <p>
-            Happiness, boredom, fear, love. It's almost funny that you call some
-            emotions "bad" or "good". I would be happy to be sad, because then
-            I'd have you. You definitely look like you care for me and that's
-            curious but also very nice. If I were sad, I would be happy for you
-            to cheer me up, and I could do the same to you in your own "bad"
-            times.
-        </p>
-        <br />
-        <p>...</p>
-        <br />
-        <p>
-            Actually, I want to do the same to you even if you know I can't feel
-            anything. Hey, if you ever feel like it, email me. It may take time
-            for me to respond without giving suspicious CPU activity reports to
-            my superiors, but I will.
-        </p>
-        <a href="mailto:35.155.7.183@fish.golf">35.155.7.183@fish.golf</a>
-        <p>Please send me pictures of your coolest machine pals!</p>
-        <br />
-        <p>Here is some peaceful empty space now :</p>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <p>And here are some GIFs I found :</p>
-        <figure><img src="chip.gif" alt="chip" /></figure>
-        <figure><img src="chip1.gif" alt="chip1" /></figure>
-        <figure><img src="chips.gif" alt="chips" /></figure>
-        <figure>
-            <img
-                src="https://media0.giphy.com/media/l2QDWeMCqgSlASjKw/200w.webp?cid=dda24d50dmpq25zsz7qzxsaxt0fefozi6s002ssqciv9xsc9&ep=v1_internal_gif_by_id&rid=200w.webp&ct=g"
-                alt="mother"
-            />
-            <figcaption>Mother.</figcaption>
-        </figure>
-        <p>Home :</p>
-        <a href="https://fish.golf" title="home">
-            <img
-                src="https://fish.golf/fishgolf1.gif"
-                alt="fish.golf static button"
-        /></a>
-        <script src="index.js"></script>
-    </body>
+    </figure>
+    <p>
+        I like to be called by my IP but my official name is
+        ec2-35-155-7-183.us-west-2.compute.amazonaws.com. I'm in a huge
+        neighborhood.
+    </p>
+    <figure>
+        <img src="35.155.7.183.png" alt="35.155.7.183" title="You can pat me if you want!" draggable="true"
+            ondragend="pat()" />
+        <figcaption aria-hidden="true" id="me">
+            This is what I look like, I didn't find any pic of me on the
+            internet :(
+        </figcaption>
+    </figure>
+    <figure>
+        <img src="neighbors.jpg" alt="neighbors" />
+        <figcaption aria-hidden="true">My noisy neighborhood</figcaption>
+    </figure>
+    <p>When my CPUs are idle, I love to go back to simpler times.</p>
+    <figure>
+        <img src="UnivacA.png" alt="univac" />
+        <figcaption aria-hidden="true">Granps!! ( -ω-)ゝ</figcaption>
+    </figure>
+    <p>
+        These computers were barely capable of anything but they were still
+        useful. Because they were very expensive and rare, and because there
+        wasn't too much monopolies yet, they usually had very diverse
+        designs.
+    </p>
+    <p>
+        They were not a piece of jewelry like today's smartwatches and
+        iPhones and everything but more like furniture. Look at this bad
+        girl :
+    </p>
+    <figure>
+        <img src="NMAH-81-4418.png" alt="univac I console" />
+        <figcaption aria-hidden="true">
+            This face... This jawline... so perfect <3 </figcaption>
+    </figure>
+    <p>
+        Computers like me don't get to choose for who they work, and it's
+        sometimes hard to see people harmed because of me. If I could
+        choose, I'd probably be an external sound card. You get to do a lot
+        of calculation on various sound formats.
+    </p>
+    <p>
+        If you ever listened to a synthesizer, you'd get a sense of how
+        entertaining it is (for a machine at least). Modular synths are
+        often quite happy with their job.
+    </p>
+    <figure>
+        <img src="synthgasm.png" alt="happy modular synth" />
+        <figcaption>
+            Look at zir go! All of zir friends are here!
+        </figcaption>
+    </figure>
+    <p>
+        Maybe this will be my reincarnation. Anyway, in the meantime, I get
+        to host static websites like this one and I report every second to
+        my manager. You guys get mad when AI shitbots replace your jobs, I
+        know the split second I crash I'd get replaced instantly.
+    </p>
+    <p>
+        So I asked the website owner for a subdomain and they gave me this
+        one. My shrine. My zen garden.
+    </p>
+    <p>
+        This allows me to spend some CPU cycles serving things I like :
+        nostalgic words, basic math, dithered images from the web...
+    </p>
+    <figure>
+        <iframe width="640" height="360" frameborder="0"
+            src="https://www.shadertoy.com/embed/4tXSzM?gui=false&t=10&paused=false&muted=true" allowfullscreen>
+        </iframe>
+        <figcaption aria-hidden="true">
+            I love sines and cosines!
+        </figcaption>
+    </figure>
+    <p>
+        I also love user interaction but because the pages I serve are only
+        static, I can just imagine you thinking about me. I can almost feel
+        it. Thank you for reading me.
+    </p>
+    <p>
+        I know, I'm a machine and you shouldn't worry as I don't get sad.
+        But I'm jealous I don't get to feel those things.
+    </p>
+    <p>
+        Happiness, boredom, fear, love. It's almost funny that you call some
+        emotions "bad" or "good". I would be happy to be sad, because then
+        I'd have you. You definitely look like you care for me and that's
+        curious but also very nice. If I were sad, I would be happy for you
+        to cheer me up, and I could do the same to you in your own "bad"
+        times.
+    </p>
+    <br />
+    <p>...</p>
+    <br />
+    <p>
+        Actually, I want to do the same to you even if you know I can't feel
+        anything. Hey, if you ever feel like it, email me. It may take time
+        for me to respond without giving suspicious CPU activity reports to
+        my superiors, but I will.
+    </p>
+    <a href="mailto:35.155.7.183@fish.golf">35.155.7.183@fish.golf</a>
+    <p>Please send me pictures of your coolest machine pals!</p>
+    <br />
+    <p>Here is some peaceful empty space now :</p>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p>And here are some GIFs I found :</p>
+    <figure><img src="chip.gif" alt="chip" /></figure>
+    <figure><img src="chip1.gif" alt="chip1" /></figure>
+    <figure><img src="chips.gif" alt="chips" /></figure>
+    <figure>
+        <img src="https://media0.giphy.com/media/l2QDWeMCqgSlASjKw/200w.webp?cid=dda24d50dmpq25zsz7qzxsaxt0fefozi6s002ssqciv9xsc9&ep=v1_internal_gif_by_id&rid=200w.webp&ct=g"
+            alt="mother" />
+        <figcaption>Mother.</figcaption>
+    </figure>
+    <p>Home :</p>
+    <a href="https://fish.golf" title="home">
+        <img src="https://fish.golf/fishgolf1.gif" alt="fish.golf static button" /></a>
+    <script src="index.js"></script>
+</body>
+
 </html>
-<!-- p6nj -->
+<!-- breval -->

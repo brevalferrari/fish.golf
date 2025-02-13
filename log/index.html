@@ -1,89 +1,83 @@
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- embed -->
-        <meta content="Fish Golf" property="og:title" />
-        <meta
-            content="Killer fish.. Killer fish from San Diego.. I don't know what I am, but I taste really good! I'm a killer fish! Hello! I'll be your killer fish for the evening, Thank you."
-            property="og:description"
-        />
-        <meta content="https://fish.golf" property="og:url" />
-        <meta content="https://fish.golf/fishgolf.png" property="og:image" />
-        <meta content="#030b14" data-react-helmet="true" name="theme-color" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Anti-AI meta tags from https://github.com/healsdata/ai-training-opt-out -->
-        <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
-        <meta name="CCBot" content="nofollow" />
-        <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
-        <meta name="robots" content="noai, noimageai" />
-        <!-- TDM Metadata in HTML Content -->
-        <meta name="tdm-reservation" content="1" />
+    <!-- embed -->
+    <meta content="Fish Golf" property="og:title" />
+    <meta
+        content="Killer fish.. Killer fish from San Diego.. I don't know what I am, but I taste really good! I'm a killer fish! Hello! I'll be your killer fish for the evening, Thank you."
+        property="og:description" />
+    <meta content="https://fish.golf" property="og:url" />
+    <meta content="https://fish.golf/fishgolf.png" property="og:image" />
+    <meta content="#030b14" data-react-helmet="true" name="theme-color" />
 
-        <link rel="icon" href="https://fish.golf/fish.svg" />
-        <link
-            rel="preload"
-            href="https://api.github.com/repos/p6nj/fish.golf/commits?per_page=500"
-            as="fetch"
-            type="application/json"
-            crossorigin
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="index.css" type="text/css" />
+    <!-- Anti-AI meta tags from https://github.com/healsdata/ai-training-opt-out -->
+    <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
+    <meta name="CCBot" content="nofollow" />
+    <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
+    <meta name="robots" content="noai, noimageai" />
+    <!-- TDM Metadata in HTML Content -->
+    <meta name="tdm-reservation" content="1" />
 
-        <title>Log Fish Golf</title>
-        <script src="json-to-table.js"></script>
-    </head>
+    <link rel="icon" href="https://fish.golf/fish.svg" />
+    <link rel="preload" href="https://api.github.com/repos/brevalferrari/fish.golf/commits?per_page=500" as="fetch"
+        type="application/json" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" type="text/css" />
 
-    <body>
-        <h1>GITHUB API SHOWCASE</h1>
-        <p>Here follows a list of the last 500 commits for this website.</p>
-    </body>
-    <script>
-        const escapeHtml = (unsafe) =>
-            unsafe
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
+    <title>Log Fish Golf</title>
+    <script src="json-to-table.js"></script>
+</head>
 
-        ((url, callback) => {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", url, true);
-            xhr.responseType = "json";
-            xhr.onload = () =>
-                callback(xhr.status === 200 ? null : xhr.status, xhr.response);
-            xhr.send();
-        })(
-            "https://api.github.com/repos/p6nj/fish.golf/commits?per_page=500",
-            (error, data) => {
-                document.body.innerHTML +=
-                    error === null
-                        ? ConvertJsonToTable(
-                              data.map((e) => {
-                                  return {
-                                      When: new Date(e.commit.author.date),
-                                      Who: e.author.login,
-                                      Legit: e.commit.verification.verified,
-                                      Message: escapeHtml(e.commit.message),
-                                      URL:
-                                          "https://github.com/p6nj/fish.golf/commit/" +
-                                          e.sha,
-                                  };
-                              }),
-                              null,
-                              null,
-                              escapeHtml("<link>"),
-                          )
-                        : error;
-            },
-        );
-    </script>
+<body>
+    <h1>GITHUB API SHOWCASE</h1>
+    <p>Here follows a list of the last 500 commits for this website.</p>
+</body>
+<script>
+    const escapeHtml = (unsafe) =>
+        unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    ((url, callback) => {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.responseType = "json";
+        xhr.onload = () =>
+            callback(xhr.status === 200 ? null : xhr.status, xhr.response);
+        xhr.send();
+    })(
+        "https://api.github.com/repos/brevalferrari/fish.golf/commits?per_page=500",
+        (error, data) => {
+            document.body.innerHTML +=
+                error === null
+                    ? ConvertJsonToTable(
+                        data.map((e) => {
+                            return {
+                                When: new Date(e.commit.author.date),
+                                Who: e.author.login,
+                                Legit: e.commit.verification.verified,
+                                Message: escapeHtml(e.commit.message),
+                                URL:
+                                    "https://github.com/brevalferrari/fish.golf/commit/" +
+                                    e.sha,
+                            };
+                        }),
+                        null,
+                        null,
+                        escapeHtml("<link>"),
+                    )
+                    : error;
+        },
+    );
+</script>
+
 </html>
