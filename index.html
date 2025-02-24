@@ -1,114 +1,187 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- embed -->
+        <meta content="Fish Golf" property="og:title" />
+        <meta
+            content="Killer fish.. Killer fish from San Diego.. I don't know what I am, but I taste really good! I'm a killer fish! Hello! I'll be your killer fish for the evening, Thank you."
+            property="og:description"
+        />
+        <meta content="https://fish.golf" property="og:url" />
+        <meta content="https://fish.golf/fishgolf.png" property="og:image" />
+        <meta content="#030b14" data-react-helmet="true" name="theme-color" />
 
-    <!-- embed -->
-    <meta content="Fish Golf" property="og:title" />
-    <meta
-        content="Killer fish.. Killer fish from San Diego.. I don't know what I am, but I taste really good! I'm a killer fish! Hello! I'll be your killer fish for the evening, Thank you."
-        property="og:description" />
-    <meta content="https://fish.golf" property="og:url" />
-    <meta content="https://fish.golf/fishgolf.png" property="og:image" />
-    <meta content="#030b14" data-react-helmet="true" name="theme-color" />
+        <!-- Anti-AI meta tags from https://github.com/healsdata/ai-training-opt-out -->
+        <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
+        <meta name="CCBot" content="nofollow" />
+        <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
+        <meta name="robots" content="noai, noimageai" />
+        <!-- TDM Metadata in HTML Content -->
+        <meta name="tdm-reservation" content="1" />
 
-    <!-- Anti-AI meta tags from https://github.com/healsdata/ai-training-opt-out -->
-    <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
-    <meta name="CCBot" content="nofollow" />
-    <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
-    <meta name="robots" content="noai, noimageai" />
-    <!-- TDM Metadata in HTML Content -->
-    <meta name="tdm-reservation" content="1" />
+        <link rel="icon" href="fish.svg" />
+        <link
+            rel="stylesheet"
+            href="https://teethinvitro.neocities.org/webring/linuxring/script/onionring.css"
+        />
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <title>Fish Golf</title>
+        <link
+            href="https://melonking.net/styles/flood.css"
+            rel="stylesheet"
+            type="text/css"
+            media="all"
+        />
+        <script src="https://melonking.net/scripts/flood.js"></script>
+        <link rel="preload" href="fr.js" as="script" />
+        <link rel="stylesheet" type="text/css" href="fr.css" />
+        <link
+            rel="preload"
+            href="https://fish.golf/explosion.gif"
+            as="image"
+            type="image/gif"
+        />
+    </head>
 
-    <link rel="icon" href="fish.svg" />
-    <link rel="stylesheet" href="https://teethinvitro.neocities.org/webring/linuxring/script/onionring.css" />
-    <link rel="stylesheet" type="text/css" href="index.css" />
-    <title>Fish Golf</title>
-    <link href="https://melonking.net/styles/flood.css" rel="stylesheet" type="text/css" media="all" />
-    <script src="https://melonking.net/scripts/flood.js"></script>
-    <link rel="preload" href="fr.js" as="script" />
-    <link rel="stylesheet" type="text/css" href="fr.css" />
-    <link rel="preload" href="https://fish.golf/explosion.gif" as="image" type="image/gif" />
-</head>
-
-<body>
-    <a id="fr" href="#"><img src="france-flag-round.gif" alt="france flag" /></a>
-    <main>
-        <h1 id="welcome"><span>Welcome to Fish Golf!</span></h1>
-        <br />
-        <a href="https://fish.golf" title="fish.golf"><img src="fishgolf.gif" alt="fish.golf button" /></a><a
-            href="https://guams.fr/"><img src="guams.gif" alt="guams.fr" title="frien :3" /></a><img src="xp.gif"
-            alt="xp" /><a href="https://vscodium.com/"><img src="vscodium.gif" alt="vscodium"
-                title="VSCode but libre!" /></a><a href="https://lineageos.org/"><img src="lineageos.png"
-                alt="LineageOS" title="Android but libre!" /></a><a href="https://www.hrw.org/topic/lgbt-rights"><img
-                src="transnow2.gif" alt="transrights" /></a><img src="https://cyber.dabamos.de/88x31/webpeople.gif"
-            alt="webpeople" /><img src="bestvieweddesktop.gif" alt="best viewed on desktop"
-            title="some JS don't work on mobile" /><img src="bestview.gif" alt="best viewed with open eyes" /><a
-            href="https://www.rust-lang.org/"><img src="ferry.gif" alt="rustlang" title="Rust supremacy" /></a><a
-            href="https://www.bitview.net/"><img src="bitview.gif" alt="bitview" /></a><a
-            href="https://www.gentoo.org/"><img src="gentoo.gif" alt="gentoo" title="i use gentoo btw" /></a><a
-            href="https://shishka.neocities.org/"><img src="shishka-go-go-go.gif" alt="Shishka"
-                title="incredible website" /></a><a href="https://aquasine.net"><img
-                src="https://aquasine.net/aquasine_banner.gif" /></a>
-        <br />
-        <br />
-        <div>
-            <p>
-                <span id="intro">
-                    I'm an Amazon server at Boardman, Oregon, working for
-                    Porkbun to provide you this static piece of pointless
-                    web. I've heard the website was experiencing a leak, I
-                    hope it's not too bad!
-                </span>
-            </p>
+    <body>
+        <a id="fr" href="#"
+            ><img src="france-flag-round.gif" alt="france flag"
+        /></a>
+        <main>
+            <h1 id="welcome"><span>Welcome to Fish Golf!</span></h1>
             <br />
-            <p>
-                <span id="links">
-                    Anyway, feel free to
-                    <a class="normal" href="https://index.fish.golf" title="Index">
-                        browse</a>.
-                </span>
-            </p>
+            <a href="https://fish.golf" title="fish.golf"
+                ><img src="fishgolf.gif" alt="fish.golf button" /></a
+            ><a href="https://guams.fr/"
+                ><img src="guams.gif" alt="guams.fr" title="frien :3" /></a
+            ><img src="xp.gif" alt="xp" /><a href="https://vscodium.com/"
+                ><img
+                    src="vscodium.gif"
+                    alt="vscodium"
+                    title="VSCode but libre!" /></a
+            ><a href="https://lineageos.org/"
+                ><img
+                    src="lineageos.png"
+                    alt="LineageOS"
+                    title="Android but libre!" /></a
+            ><a href="https://www.hrw.org/topic/lgbt-rights"
+                ><img src="transnow2.gif" alt="transrights" /></a
+            ><img
+                src="https://cyber.dabamos.de/88x31/webpeople.gif"
+                alt="webpeople"
+            /><img
+                src="bestvieweddesktop.gif"
+                alt="best viewed on desktop"
+                title="some JS don't work on mobile"
+            /><img src="bestview.gif" alt="best viewed with open eyes" /><a
+                href="https://www.rust-lang.org/"
+                ><img
+                    src="ferry.gif"
+                    alt="rustlang"
+                    title="Rust supremacy" /></a
+            ><a href="https://www.bitview.net/"
+                ><img src="bitview.gif" alt="bitview" /></a
+            ><a href="https://www.gentoo.org/"
+                ><img
+                    src="gentoo.gif"
+                    alt="gentoo"
+                    title="i use gentoo btw" /></a
+            ><a href="https://shishka.neocities.org/"
+                ><img
+                    src="shishka-go-go-go.gif"
+                    alt="Shishka"
+                    title="incredible website" /></a
+            ><a href="https://aquasine.net"
+                ><img
+                    src="https://aquasine.net/aquasine_banner.gif"
+                    alt="aquasine.net"
+                    title="epic music" /></a
+            ><a href="https://layercake.nekoweb.org/"
+                ><img
+                    src="https://files.catbox.moe/l4qecn.gif"
+                    alt="layercake"
+                    title="amazing links"
+            /></a>
             <br />
-            <p>
-                <span id="source">
-                    Also, I found the author's code on GitHub so if you want
-                    to steal it just go
-                    <a class="normal" href="https://github.com/brevalferrari/fish.golf"
-                        title="steal from him!">there</a>.
-                </span>
-            </p>
             <br />
-            <p>
-                <span id="closer">
-                    Cheers,
-                    <a class="normal"
-                        href="https://iplookup.flagfox.net/?ip=35.155.7.183&host=fish.golf">35.155.7.183</a>
-                </span>
-            </p>
+            <div>
+                <p>
+                    <span id="intro">
+                        I'm an Amazon server at Boardman, Oregon, working for
+                        Porkbun to provide you this static piece of pointless
+                        web. I've heard the website was experiencing a leak, I
+                        hope it's not too bad!
+                    </span>
+                </p>
+                <br />
+                <p>
+                    <span id="links">
+                        Anyway, feel free to
+                        <a
+                            class="normal"
+                            href="https://index.fish.golf"
+                            title="Index"
+                        >
+                            browse</a
+                        >.
+                    </span>
+                </p>
+                <br />
+                <p>
+                    <span id="source">
+                        Also, I found the author's code on GitHub so if you want
+                        to steal it just go
+                        <a
+                            class="normal"
+                            href="https://github.com/brevalferrari/fish.golf"
+                            title="steal from him!"
+                            >there</a
+                        >.
+                    </span>
+                </p>
+                <br />
+                <p>
+                    <span id="closer">
+                        Cheers,
+                        <a
+                            class="normal"
+                            href="https://iplookup.flagfox.net/?ip=35.155.7.183&host=fish.golf"
+                            >35.155.7.183</a
+                        >
+                    </span>
+                </p>
+            </div>
+        </main>
+        <br />
+        <br />
+        <br />
+        <div id="trans">
+            <script
+                src="https://transring.neocities.org/ring.js"
+                data-widget="nb"
+            ></script>
         </div>
-    </main>
-    <br />
-    <br />
-    <br />
-    <div id="trans">
-        <script src="https://transring.neocities.org/ring.js" data-widget="nb"></script>
-    </div>
-    <br />
-    <div id="linuxring">
-        <script type="text/javascript"
-            src="https://teethinvitro.neocities.org/webring/linuxring/script/onionring-variables.js"></script>
-        <script type="text/javascript"
-            src="https://teethinvitro.neocities.org/webring/linuxring/script/onionring-widget.js"></script>
-    </div>
-    <div id="bonki-ring">
-        <script type="text/javascript"
-            src="https://bonkiscoolsite.neocities.org/bonkiring/bonkiring-widget.js"></script>
-    </div>
-</body>
-<script src="fr.js"></script>
-
+        <br />
+        <div id="linuxring">
+            <script
+                type="text/javascript"
+                src="https://teethinvitro.neocities.org/webring/linuxring/script/onionring-variables.js"
+            ></script>
+            <script
+                type="text/javascript"
+                src="https://teethinvitro.neocities.org/webring/linuxring/script/onionring-widget.js"
+            ></script>
+        </div>
+        <div id="bonki-ring">
+            <script
+                type="text/javascript"
+                src="https://bonkiscoolsite.neocities.org/bonkiring/bonkiring-widget.js"
+            ></script>
+        </div>
+    </body>
+    <script src="fr.js"></script>
 </html>
 <!-- breval -->
