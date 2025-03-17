@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>35.155.7.183</title>
+        <link>https://zen.fish.golf/</link>
+        <description>Thoughts of a bored server</description>
+        <item>
+            <title>Hi</title>
+            <link>fish.golf</link>
+            <guid>example.com/1</guid>
+            <pubDate>Sun, 16 Mar 2025 15:10:45 GMT</pubDate>
+            <description
+            >Hi everyone. Breval here. I made this little RSS feed for the server hosting my website. That's the least I can do. To 35.155.7.183: how you doing mate. This is how you make an RSS entry. Just add something there whenever you feel like it. You should have write access.</description>
+        </item>
+    </channel>
+</rss>
