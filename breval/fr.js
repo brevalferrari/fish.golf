@@ -8,8 +8,7 @@ const translation = {
   "menu-links": "Liens",
   "menu-pics": "Photos",
   "menu-drawings": "Dessins (secret)",
-  persona:
-    "C'est mon vrai nom.",
+  persona: "C'est mon vrai nom.",
   description:
     "Je suis un long Français pan et non-binaire (pronoms masculins) qui fait de son mieux pour aider tout le monde dans sa quête principale : trouver une place dans ce monde énorme.",
   pronouns:
@@ -23,6 +22,9 @@ const translation = {
   "news-helloworld-h": "29/12/2024 - Bonjour, Monde",
   "news-helloworld-p":
     "Mes premières news. Je suis actuellement étudiant en informatique à l'Université du Québec à Chicoutimi en programme d'échange. Je cherche activement un stage au Québec et dans les provinces voisines. C'est encore les vacances donc j'ai du temps pour nourrir mon site.",
+  "news-2025-h": "4/04/2025 - salut 2025",
+  "news-2025-p":
+    "Les États-Unis sont en feu, les services secrets français s'en prennent encore à nos données personnelles, des personnes importantes se préparent à la guerre. Pendant ce temps-là, nous autres se défaisons et fleurissons de nouveau. Mon stage s'est transformé en projet : je poursuivrai mon projet Bleeperpreter. Un nouvel interpréteur avec plus de fonctionnalités. J'ai essayé les champignons, mon état s'est amélioré et a chuté puis monté encore. J'ai aimé, blessé et aimé encore et me suis retrouvé plusieurs fois seul ; mais maintenant je ne le serai plus vraiment. Je me suis retrouvé. J'apprends à aimer correctement. Je pense que c'est la meilleure partie de mon programme d'échange.",
   "facts-p": "Voici quelques infos sur moi :",
   "facts-carl": `<a href="https://www.youtube.com/@CarlSagan42">CarlSagan42</a> m'a appris l'anglais (fan depuis ~2016 <3)`,
   "facts-you": "T'es génial",
