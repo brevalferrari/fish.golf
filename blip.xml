@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Blip - devlog (fr)</title>
+        <link>https://gitdab.com/p6nj/blip</link>
+        <description
+        >Compte-rendus journaliers de l'avancement du projet</description>
+        <item>
+            <title>01/05</title>
+            <link
+            >https://gitdab.com/breval/blip/commit/322422bf195e64789192987c2cec5428d3361fc8</link>
+            <description
+            >Premier jour de projet. J'ai renommé BNG en Blip pour refléter la nouvelle conception et changé la license en MIT comme indiqué sur le cahier des charges (d4c8b13376153e2456537b8776f58f8a48d1f742). J'ai aussi refait la conception de l'interface en ligne de commande et mis au propre dans une pseudo page man, https://gitdab.com/breval/blip/src/commit/322422bf195e64789192987c2cec5428d3361fc8/doc/cli-design.txt (322422bf195e64789192987c2cec5428d3361fc8). J'ai pris le choix d'avoir des notes de plusieurs lettres car je pense que ça pourrait passer à l'implémentation ; on verra. Je traine un peu sur la reconception du langage, ce sera fait d'ici ce soir.</description>
+        </item>
+    </channel>
+</rss>
