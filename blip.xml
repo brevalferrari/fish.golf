@@ -20,6 +20,9 @@
             <p>
                 J'ai aussi refait la conception de l'interface en ligne de commande et mis au propre dans <a href="https://gitdab.com/breval/blip/src/commit/322422bf195e64789192987c2cec5428d3361fc8/doc/cli-design.txt">une pseudo page man</a> (<a href="https://gitdab.com/breval/blip/commit/322422bf195e64789192987c2cec5428d3361fc8">322422bf195e64789192987c2cec5428d3361fc8</a>). J'ai pris le choix d'avoir des notes de plusieurs lettres car je pense que ça pourrait passer à l'implémentation ; on verra. Je traine un peu sur la reconception du langage, ce sera fait d'ici ce soir.
             </p>
+            <p>
+                Trois problèmes ont été repérés sur la conception initiale suite à la conception du langage. Le temps total du morceau était donné sous la variable T qui était aussi utilisé pour le tempo donc le temps total n'est plus supporté. Il manquait une fonction pour définir la longueur des notes, j'ai donc rajouté une option du CLI et une variable l pour suivre les règles classiques MML par défaut (<a href="https://gitdab.com/breval/blip/commit/574460a098121671e0449af3fc652c3cde1ea4e0">574460a098121671e0449af3fc652c3cde1ea4e0</a>). Enfin, pour réaliser des effets d'ADSR dans l'instrument par exemple, il manquait une variable pour connaître le temps total de la note ; cependant, il est déjà possible de le connaître grâce à l'expression de la nouvelle option par la variable l ou une variable customisée qui influe sur cette expression (problème réglé).
+            </p>
             </div>]]></description>
         </item>
     </channel>
