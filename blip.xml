@@ -4,25 +4,33 @@
         <title>Blip - devlog (fr)</title>
         <link>https://gitdab.com/p6nj/blip</link>
         <description
-        >Compte-rendus journaliers de l'avancement du projet</description>
+        >Compte-rendus hebdomadaires de l'avancement du projet</description>
         <item>
-            <title>01/05</title>
-            <link
-            >https://gitdab.com/breval/blip/commit/322422bf195e64789192987c2cec5428d3361fc8</link>
+            <title>01/05 - 02/05</title>
+            <link>https://gitdab.com/breval/blip/commits/branch/main</link>
             <description
             ><![CDATA[<div xmlns="http://www.w3.org/1999/xhtml" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:media="http://search.yahoo.com/mrss/">
             <p>
-                Premier jour de projet.
+                Début du projet.
             </p>
             <p>
                 J'ai renommé BNG en Blip pour refléter la nouvelle conception et changé la license en MIT comme indiqué sur le cahier des charges (<a href="https://gitdab.com/breval/blip/commit/d4c8b13376153e2456537b8776f58f8a48d1f742">d4c8b13376153e2456537b8776f58f8a48d1f742</a>).
             </p>
             <p>
-                J'ai aussi refait la conception de l'interface en ligne de commande et mis au propre dans <a href="https://gitdab.com/breval/blip/src/commit/322422bf195e64789192987c2cec5428d3361fc8/doc/cli-design.txt">une pseudo page man</a> (<a href="https://gitdab.com/breval/blip/commit/322422bf195e64789192987c2cec5428d3361fc8">322422bf195e64789192987c2cec5428d3361fc8</a>). J'ai pris le choix d'avoir des notes de plusieurs lettres car je pense que ça pourrait passer à l'implémentation ; on verra. Je traine un peu sur la reconception du langage, ce sera fait d'ici ce soir.
+                J'ai aussi refait la conception de l'interface en ligne de commande et mis au propre dans <a href="https://gitdab.com/breval/blip/src/commit/322422bf195e64789192987c2cec5428d3361fc8/doc/cli-design.txt">une pseudo page man</a> (<a href="https://gitdab.com/breval/blip/commit/322422bf195e64789192987c2cec5428d3361fc8">322422bf195e64789192987c2cec5428d3361fc8</a>). J'ai pris le choix d'avoir des notes de plusieurs lettres car je pense que ça pourrait passer à l'implémentation ; on verra. Le langage est prêt également (<a href="https://gitdab.com/breval/blip/commit/3fdb495a3bb975805355e725911656d1d1b8df68">3fdb495a3bb975805355e725911656d1d1b8df68</a>). Trois problèmes sont apparus à la reconception du langage :
             </p>
-            <p>
-                Trois problèmes ont été repérés sur la conception initiale suite à la conception du langage. Le temps total du morceau était donné sous la variable T qui était aussi utilisé pour le tempo donc le temps total n'est plus supporté. Il manquait une fonction pour définir la longueur des notes, j'ai donc rajouté une option du CLI et une variable l pour suivre les règles classiques MML par défaut (<a href="https://gitdab.com/breval/blip/commit/574460a098121671e0449af3fc652c3cde1ea4e0">574460a098121671e0449af3fc652c3cde1ea4e0</a>). Enfin, pour réaliser des effets d'ADSR dans l'instrument par exemple, il manquait une variable pour connaître le temps total de la note ; cependant, il est déjà possible de le connaître grâce à l'expression de la nouvelle option par la variable l ou une variable customisée qui influe sur cette expression (problème réglé).
-            </p>
+            <ol>
+                <li>
+                    Le temps total du morceau était donné sous la variable T qui était aussi utilisé pour le tempo donc le temps total n'est plus supporté.
+                </li>
+                <li>
+                    Il manquait une fonction pour définir la longueur des notes, j'ai donc rajouté une option du CLI et une variable l pour suivre les règles classiques MML par défaut (<a href="https://gitdab.com/breval/blip/commit/574460a098121671e0449af3fc652c3cde1ea4e0">574460a098121671e0449af3fc652c3cde1ea4e0</a>).
+                </li>
+                <li>
+                    Enfin, pour réaliser des effets d'ADSR dans l'instrument par exemple, il manquait une variable pour connaître le temps total de la note ; cependant, il est déjà possible de le connaître grâce à l'expression de la nouvelle option par la variable l ou une variable customisée qui influe sur cette expression (problème réglé).
+                </li>
+            </ol>
+            <pre>Ce post sera modifié d'ici ce soir ; les prochains posts seront publiés directement en fin de semaine.</pre>
             </div>]]></description>
         </item>
     </channel>
