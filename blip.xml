@@ -47,6 +47,20 @@
                 <br>Un moyen de résoudre ce problème serait d'utiliser le dispatch dynamique de Rust afin de gérer des types différents via un trait commun, avec ou sans Box (ce sera je pense nécessaire).
                 On pourrait donc avoir une struct pour chaque élément du langage (silence, boucle, note...) sous un trait commun, retourner Box<dyn Trait> de chacun d'entre eux et avoir une méthode de ce trait capable de rendre un nouveau contexte à partir d'un ancien. Les samples générés seront stockés dans ce contexte. La seule chose à prendre en compte pour que ce système fonctionne est la liste des règles à respecter pour que le trait soit dyn-compatible : <a href="https://doc.rust-lang.org/reference/items/traits.html#dyn-compatibility">dyn compatibility</a>.
             </p>
+            <h2>
+                UML
+            </h2>
+            <p>
+                Le diagramme de composants ne pose aucun problème. En revanche, pour le diagramme de classes, côté lexer, quelques questions d'implémentation se posent déjà :
+            </p>
+            <ul>
+                <li>Devrait-on garder la généricité des entrées telles que celles des parseurs de nom ?</li>
+                <li>Un type implémentant un trait, caché derrière le dynamic dispatch de ce trait, peut-il conserver son temps de vie ? Probablement pas, et l'erreur ne sera visible qu'à l'implémentation.</li>
+                <li>Pourrait-on créer de nouvelles variables en partition sans les déclarer auparavant ? Cela semble possible mais pourrait faciliter les typos ; on pourrait par exemple rajouter une variable sans le vouloir avec pour effet que la variable que l'ont pensait changer reste inchangée. Que se passe-t-il si une variable non déclarée est dans l'expression de l'instrument ? Devrait-on retarder l'évaluation de l'expression afin de permettre cela ?</li>
+            </ul>
+            <p>
+                Note: le symbole "start-here" a été renommé Marker.
+            </p>
             </div>]]></description>
         </item>
     </channel>
