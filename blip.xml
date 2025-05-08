@@ -61,6 +61,10 @@
             <p>
                 Note: le symbole "start-here" a été renommé Marker.
             </p>
+            <p>
+                Après le 1er commit sur le diagramme de classe (<a href="https://gitdab.com/breval/blip/commit/8caeacc6792a963671dbc8273cac34a5c177dee0">8caeacc6792a963671dbc8273cac34a5c177dee0</a>), je me suis rendu compte que les parseurs seront potentiellement reconstruits pleinement à chaque itération du parseur. Il serait donc plus efficace de parser entièrement l'entrée avant de la compiler, en séparant la validation sémantique de la validation syntaxique (par des erreurs différentes).
+                Pour éviter de répéter le type <pre>impl for<'i> nom::Parser<nom_locate::LocatedSpan<&'i I>, Output = Self, Error = nom::Err<nom::Error<nom_locate::LocatedSpan<&'i I>>></pre>, et comme il n'est pas possible de créer d'alias de types pour de tels types opaques, j'ai créé une struct wrapper comme proxy, TokenParser. Cependant, il faut toujours indiquer les types génériques de TokenParser dans les valeurs de retour des générateurs de parseurs. J'ai donc décidé d'utiliser un supertrait puisqu'ils peuvent en tout cas dans l'interpréteur evcxr demander des types génériques seulement utilisés dans ses prérequis.
+            </p>
             </div>]]></description>
         </item>
     </channel>
