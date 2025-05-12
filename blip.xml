@@ -47,6 +47,13 @@
                 <br>Un moyen de résoudre ce problème serait d'utiliser le dispatch dynamique de Rust afin de gérer des types différents via un trait commun, avec ou sans Box (ce sera je pense nécessaire).
                 On pourrait donc avoir une struct pour chaque élément du langage (silence, boucle, note...) sous un trait commun, retourner Box<dyn Trait> de chacun d'entre eux et avoir une méthode de ce trait capable de rendre un nouveau contexte à partir d'un ancien. Les samples générés seront stockés dans ce contexte. La seule chose à prendre en compte pour que ce système fonctionne est la liste des règles à respecter pour que le trait soit dyn-compatible : <a href="https://doc.rust-lang.org/reference/items/traits.html#dyn-compatibility">dyn compatibility</a>.
             </p>
+            </div>]]></description>
+        </item>
+        <item>
+        <title>05/05 - 09/05</title>
+        <link>https://fish.golf/blip1.log.txt</link>
+        <description
+            ><![CDATA[<div xmlns="http://www.w3.org/1999/xhtml" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:media="http://search.yahoo.com/mrss/">
             <h2>
                 UML
             </h2>
