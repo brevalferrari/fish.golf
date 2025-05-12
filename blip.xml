@@ -7,7 +7,7 @@
         >Compte-rendus hebdomadaires de l'avancement du projet</description>
         <item>
             <title>01/05 - 02/05</title>
-            <link>https://fish.golf/blip1.log.txt</link>
+            <link>https://gitdab.com/p6nj/blip</link>
             <description
             ><![CDATA[<div xmlns="http://www.w3.org/1999/xhtml" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:media="http://search.yahoo.com/mrss/">
             <h1>
@@ -50,29 +50,43 @@
             </div>]]></description>
         </item>
         <item>
-        <title>05/05 - 09/05</title>
-        <link>https://fish.golf/blip1.log.txt</link>
-        <description
+            <title>05/05 - 09/05</title>
+            <link>https://gitdab.com/p6nj/blip</link>
+            <description
             ><![CDATA[<div xmlns="http://www.w3.org/1999/xhtml" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:media="http://search.yahoo.com/mrss/">
-            <h2>
-                UML
-            </h2>
-            <p>
-                Le diagramme de composants ne pose aucun problème. En revanche, pour le diagramme de classes, côté lexer, quelques questions d'implémentation se posent déjà :
-            </p>
-            <ul>
-                <li>Devrait-on garder la généricité des entrées telles que celles des parseurs de nom ?</li>
-                <li>Un type implémentant un trait, caché derrière le dynamic dispatch de ce trait, peut-il conserver son temps de vie ? Probablement pas, et l'erreur ne sera visible qu'à l'implémentation.</li>
-                <li>Pourrait-on créer de nouvelles variables en partition sans les déclarer auparavant ? Cela semble possible mais pourrait faciliter les typos ; on pourrait par exemple rajouter une variable sans le vouloir avec pour effet que la variable que l'ont pensait changer reste inchangée. Que se passe-t-il si une variable non déclarée est dans l'expression de l'instrument ? Devrait-on retarder l'évaluation de l'expression afin de permettre cela ?</li>
-            </ul>
-            <p>
-                Note: le symbole "start-here" a été renommé Marker.
-            </p>
-            <p>
-                Après le 1er commit sur le diagramme de classe (<a href="https://gitdab.com/breval/blip/commit/8caeacc6792a963671dbc8273cac34a5c177dee0">8caeacc6792a963671dbc8273cac34a5c177dee0</a>), je me suis rendu compte que les parseurs seront potentiellement reconstruits pleinement à chaque itération du parseur. Il serait donc plus efficace de parser entièrement l'entrée avant de la compiler, en séparant la validation sémantique de la validation syntaxique (par des erreurs différentes).
-                Pour éviter de répéter le type <pre>impl for<'i> nom::Parser<nom_locate::LocatedSpan<&'i I>, Output = Self, Error = nom::Err<nom::Error<nom_locate::LocatedSpan<&'i I>>></pre>, et comme il n'est pas possible de créer d'alias de types pour de tels types opaques, j'ai créé une struct wrapper comme proxy, TokenParser. Cependant, il faut toujours indiquer les types génériques de TokenParser dans les valeurs de retour des générateurs de parseurs. J'ai donc décidé d'utiliser un supertrait puisqu'ils peuvent en tout cas dans l'interpréteur evcxr demander des types génériques seulement utilisés dans ses prérequis.
-            </p>
-            </div>]]></description>
+                <h2>
+                    UML
+                </h2>
+                <p>
+                    Le diagramme de composants ne pose aucun problème. En revanche, pour le diagramme de classes, côté lexer, quelques questions d'implémentation se posent déjà :
+                </p>
+                <ul>
+                    <li>Devrait-on garder la généricité des entrées telles que celles des parseurs de nom ?</li>
+                    <li>Un type implémentant un trait, caché derrière le dynamic dispatch de ce trait, peut-il conserver son temps de vie ? Probablement pas, et l'erreur ne sera visible qu'à l'implémentation.</li>
+                    <li>Pourrait-on créer de nouvelles variables en partition sans les déclarer auparavant ? Cela semble possible mais pourrait faciliter les typos ; on pourrait par exemple rajouter une variable sans le vouloir avec pour effet que la variable que l'ont pensait changer reste inchangée. Que se passe-t-il si une variable non déclarée est dans l'expression de l'instrument ? Devrait-on retarder l'évaluation de l'expression afin de permettre cela ?</li>
+                </ul>
+                <p>
+                    Note: le symbole "start-here" a été renommé Marker.
+                </p>
+                <p>
+                    Après le 1er commit sur le diagramme de classe (<a href="https://gitdab.com/breval/blip/commit/8caeacc6792a963671dbc8273cac34a5c177dee0">8caeacc6792a963671dbc8273cac34a5c177dee0</a>), je me suis rendu compte que les parseurs seront potentiellement reconstruits pleinement à chaque itération du parseur. Il serait donc plus efficace de parser entièrement l'entrée avant de la compiler, en séparant la validation sémantique de la validation syntaxique (par des erreurs différentes).
+                    Pour éviter de répéter le type <pre>impl for<'i> nom::Parser<nom_locate::LocatedSpan<&'i I>, Output = Self, Error = nom::Err<nom::Error<nom_locate::LocatedSpan<&'i I>>></pre>, et comme il n'est pas possible de créer d'alias de types pour de tels types opaques, j'ai créé une struct wrapper comme proxy, TokenParser. Cependant, il faut toujours indiquer les types génériques de TokenParser dans les valeurs de retour des générateurs de parseurs. J'ai donc décidé d'utiliser un supertrait puisqu'ils peuvent en tout cas dans l'interpréteur evcxr demander des types génériques seulement utilisés dans ses prérequis.
+                </p>
+                </div>]]></description>
+        </item>
+        <item>
+            <title>05/05 - 09/05</title>
+            <link>https://gitdab.com/p6nj/blip</link>
+            <description
+            ><![CDATA[<div xmlns="http://www.w3.org/1999/xhtml" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:media="http://search.yahoo.com/mrss/">
+                <h2>
+                    UML
+                </h2>
+                <p>
+                    J'ai pris un léger retard à cause de mon voyage en avion et du jetlag.
+                    J'ai fini l'UML du CLI lundi. Concernant les formats d'export audio, j'ai choisi les formats pour lesquels j'ai trouvé des librairies et ai adapté ma conception à ces dépendences.
+                </p>
+                </div>]]></description>
         </item>
     </channel>
 </rss>
