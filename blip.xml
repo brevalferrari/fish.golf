@@ -86,6 +86,9 @@
                     J'ai pris un léger retard à cause de mon voyage en avion et du jetlag.
                     J'ai fini l'UML du CLI lundi. Concernant les formats d'export audio, j'ai choisi les formats pour lesquels j'ai trouvé des librairies et ai adapté ma conception à ces dépendences.
                 </p>
+                <p>
+                    J'ai pensé qu'il serait utile pour concevoir la structure du contexte du compilateur d'avoir un diagramme d'activités pour la méthode Token.apply ; il m'est alors venu l'idée de séparer les variables par contexte comme en Rust, que des variables locales aux boucles et autres wrappers disparaissent une fois la fin trouvée, ce qui simplifierait l'implémentation. Cependant, il faut forcément recueillir le contexte de sortie des sous-éléments puisqu'on y trouve la variable t du temps.
+                </p>
                 </div>]]></description>
         </item>
     </channel>
