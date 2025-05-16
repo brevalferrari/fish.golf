@@ -75,7 +75,7 @@
                 </div>]]></description>
         </item>
         <item>
-            <title>05/05 - 09/05</title>
+            <title>05/05 - 16/05</title>
             <link>https://gitdab.com/p6nj/blip</link>
             <description
             ><![CDATA[<div xmlns="http://www.w3.org/1999/xhtml" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:media="http://search.yahoo.com/mrss/">
@@ -92,6 +92,25 @@
                 </p>
                 <p>
                     J'ai également envoyé les tokens du compilateur dans son module ; les méthodes statiques de parsing seront bien écrites dans le module parser (de simples impl).
+                </p>
+                <h2>
+                	Développement
+                </h2>
+                <p>
+                	J'ai commencé à établir la structure de la librairie et la publier sur crates.io sous le nom de bliplib. La macro "todo!()" de Rust m'a permis d'écrire des fonctions incomplètes sans géner le compilateur (et le linter). Cependant, elle n'est pas compatible avec les types impl de retour.
+                	Je me suis aussi trompé sur le trait TokenParser ; je m'attendais inconsciemment à ce qu'il soit implémenté par mes tokens mais le trait sert à renvoyer des clauses qui elles l'implémentent. Le token est donc séparé du trait alors pour que le trait implémente nom::Parser avec ce token en sortie, il faut rajouter un type générique à TokenParser. Je l'ai appelé T pour Token.
+                </p>
+                <p>
+                	Un autre problème a intervenu : l'enum Instruction de fasteval n'est pas Clonable, ce qui gène le parsing par nom (certains parsers nécessitent que la valeur de sortie soit Clone). J'ai donc forké fasteval et ajouté la macro derive sur Instruction et IC qui en dépendait. Une pull request est ouverte.
+                	Cependant, il ne sera pas possible de cloner les vecteurs de dyn Token car Token: Clone nécessite Token: Sized, ce qui le rend dyn-incompatible. J'espère que ça ne posera pas de problème plus tard.
+                </p>
+                <p>
+                	Au final, la modification de fasteval n'a servi à rien : les Instruction comme les Expression sont fortement dépendantes à une Slab et impossible d'utiliser un global mutable car la fonction compile prend une référence mutable et une autre immutable, ce qui ne passe pas à travers un MutexGuard. De plus, garder un Slab dans mon wrapper Expression est impossible car clap demande Expression: Sync + Send et Slab contient une UnsafeCell: !Send + !Clone à cause de la modernisation de ma fork. Je décide donc de garder une slab dans Expression et d'utiliser une ancienne version de fasteval sans UnsafeCell.
+                	Expression n'est plus Clone.
+                </p>
+                <p>
+                	Pour la CLI, la commande "help" étant déjà été prise par clap, j'ai choisi de la renommer memo (un rappel sur la syntaxe et les autres éléments du système). Comme clap permet de visualiser les formats disponibles via "help", cette commande a été retirée du menu mémo.
+                	Je rencontre d'autres difficultés : concernant le format audio de sortie, il est utile d'avoir des paramètres en fonction du format comme le bitrate pour un MP3 par exemple. Ces options dépendent du format sauf que le format considéré à la conception est juste une string comme valeur d'argument. Aussi, comme les paramètres des formats sont issus des librairies qui implémentent les encodeurs correspondants, ceux-ci ne disposent pas des traits nécessaires au parsing par Clap. Le plus simple est donc de créer un parseur customisé comme les champs restreints Lettre. Ce parseur étant un peu complexe, je réutilise nom déjà présent en dépendences.
                 </p>
                 </div>]]></description>
         </item>
