@@ -114,5 +114,19 @@
                 </p>
                 </div>]]></description>
         </item>
+        <item>
+	        <title>19/05 - 23/05</title>
+	        <link>https://gitdab.com/p6nj/blip</link>
+	        <description
+	        ><![CDATA[<div xmlns="http://www.w3.org/1999/xhtml" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:media="http://search.yahoo.com/mrss/">
+	            <h2>
+	            	Développement
+	            </h2>
+	            <p>
+	            	Lundi, je dois déjà m'occuper du parser mais je suis encore sur le format de sortie pour la CLI. Je me suis beaucoup battu contre les macros de clap : comme elles sont remplacées par leur équivalent en CLI builder, les fonctions de parsing customisées sont envoyées en méthode ce qui généralise trop les types paramétriques et types opaques et cause parfois des conflits de lifetimes (lifetime trop générique par rapport à celui demandé en signature de fonction), ce qui arrive notamment avec nom (très générique mais moins).
+	            	Finalement, après d'autres combats contre nom cette fois (le combinateur "alt" ne vérifie pas ses enfants mais le type qu'il produit est lui vérifié par le compilateur pour implémenter Parser, ce qui rend les typos facile car on peut changer le type de "alt" sans s'en rendre compte et trouver une erreur plus loin au moment d'utiliser des méthodes de Parser sans savoir d'où elle vient), et avec l'aide de strum pour ses utilitaires sur les enums, j'ai fini toutes les commandes du CLI. Je peux passer au parser.
+	            </p>
+	            </div>]]></description>
+	    </item>
     </channel>
 </rss>
