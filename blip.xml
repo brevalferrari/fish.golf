@@ -126,6 +126,13 @@
 	            	Lundi, je dois déjà m'occuper du parser mais je suis encore sur le format de sortie pour la CLI. Je me suis beaucoup battu contre les macros de clap : comme elles sont remplacées par leur équivalent en CLI builder, les fonctions de parsing customisées sont envoyées en méthode ce qui généralise trop les types paramétriques et types opaques et cause parfois des conflits de lifetimes (lifetime trop générique par rapport à celui demandé en signature de fonction), ce qui arrive notamment avec nom (très générique mais moins).
 	            	Finalement, après d'autres combats contre nom cette fois (le combinateur "alt" ne vérifie pas ses enfants mais le type qu'il produit est lui vérifié par le compilateur pour implémenter Parser, ce qui rend les typos facile car on peut changer le type de "alt" sans s'en rendre compte et trouver une erreur plus loin au moment d'utiliser des méthodes de Parser sans savoir d'où elle vient), et avec l'aide de strum pour ses utilitaires sur les enums, j'ai fini toutes les commandes du CLI. Je peux passer au parser.
 	            </p>
+                <p>
+                    Je me suis débarrassé du trait TokenParser à cause de conflits de lifetime (le trait TokenParser se basait sur un for<'a> et on dirait que mes parseurs sont compatibles for<'a> Fn mais pas for<'a> nom::Parser). Je peux au final utiliser directement nom::Parser ou Fn plus facilement. J'ai également retiré le type générique d'entrée des parseurs pour plus de simplicité et parce que je ne peux de toute façon former d'expression fasteval qu'à partir d'une &str.
+                    Comme mon parseur d'expression fasteval est très customisé, j'ai inclus un test. J'ai remplacé ParserParametters par un pattern matching en argument des parsers. J'ai aussi rajouté une enum LoopCount qui prend la place du usize dans Loop car il peut aussi s'y trouver le nom d'une variable et sa valeur est inconnue pendant le parsing.
+                </p>
+                <p>
+                    J'arrive à un problème: comme je ne peux pas cloner Instruction et Slab, cela s'applique aussi à VariableChange. Or, pour le parseur de Slope, je dois lui donner un VariableChange mais avec mon Parser en référence je n'ai pas le droit. Je ne peux pas donner Parser uniquement à Slope::parser car j'aurais besoin de le donner aussi aux autres wrapper parsers. Il faut donc que Slope contienne une référence à un VariableChange. Tout est passé comme prévu grâce à la propagation de temps de vie de <pre>&'a HashMap</pre> à <pre>Iter<'a></pre> puis <pre>&'a VariableChange</pre> matchant le nouveau temps de vie de Slope.
+                </p>
 	            </div>]]></description>
 	    </item>
     </channel>
