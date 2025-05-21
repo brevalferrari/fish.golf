@@ -133,6 +133,16 @@
                 <p>
                     J'arrive à un problème: comme je ne peux pas cloner Instruction et Slab, cela s'applique aussi à VariableChange. Or, pour le parseur de Slope, je dois lui donner un VariableChange mais avec mon Parser en référence je n'ai pas le droit. Je ne peux pas donner Parser uniquement à Slope::parser car j'aurais besoin de le donner aussi aux autres wrapper parsers. Il faut donc que Slope contienne une référence à un VariableChange. Tout est passé comme prévu grâce à la propagation de temps de vie de <pre>&'a HashMap</pre> à <pre>Iter<'a></pre> puis <pre>&'a VariableChange</pre> matchant le nouveau temps de vie de Slope. Seulement, à l'heure de rajouter le parseur de slope à mon parseur de tokens, le compilateur se plaint qu'un lifetime caché dans la fonction prend fin après son appel. Au final, j'avais oublié que into_box donnait aux dyn Token un 'static à cause des possibles lifetimes génériques associés à ses implémenteurs. Il suffisait donc de lui donner un lifetime générique et d'associer à tous les Token pouvant contenir une Slope un lifetime spécifique à Slope disant qu'il ne peut vivre que tant que le pointeur vers le hashmap d'instructions est présent.
                 </p>
+                <p>
+                    J'ai terminé le parseur mardi. Mercredi, je me charge des tests.
+                <p>
+                <p>
+                    J'ai pu régler le parseur de Note afin de matcher la plus longue chaine sans modifier l'index des notes. Cela résoud un problème qui m'a poussé à me limiter à des char dans Bleeperpreter : si la liste de notes est ["m", "mi"], comment faire pour que la première note ne match pas tous les "m" ? Au final, il suffit de passer à nom::branch::alt les plus longues chaines d'abord en gardant le bon index des notes.
+                    Le parseur d'expression avait un bug que je n'avais pas imaginé : l'expression "1 + x" s'arrêtera à 1 car "1 +" n'est pas une expression valide. Il faut donc faire l'inverse et commencer à partir de la fin. J'ai fait de même pour le parseur de Slope qui match lui-aussi un nom de taille variable.
+                </p>
+                <p>
+                    Il m'est venu à l'esprit que comme ma structure Parser contient l'input et est construit avant certains parseurs de Token, le parseur de variables peut trouver les variables dans l'input directement ; cela reviendrait à créer des variables en partition et nous avons déjà trouvé un problème à ce sujet. J'ai donc retiré l'input du Parser pour le passer directement au moment du parsing.
+                </p>
 	            </div>]]></description>
 	    </item>
     </channel>
