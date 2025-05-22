@@ -16,6 +16,10 @@ section {
     height: 100vh;
 }
 
+h1 {
+    font-size: xx-large;
+}
+
 img,
 video {
     max-width: 100%;
