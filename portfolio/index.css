@@ -1,0 +1,51 @@
+html {
+    image-rendering: pixelated;
+    background: url("note_bg_tile.gif") repeat;
+}
+
+body {
+    margin: 4vw;
+    font-family: sans-serif;
+    image-rendering: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    display: block;
+    height: 100vh;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+img.pixel {
+    image-rendering: pixelated;
+}
+
+div {
+    margin-bottom: 5vh;
+}
+
+aside {
+    width: auto;
+    max-width: 30vw;
+    font-style: italic;
+    margin: 4vw;
+    background-color: #d5cbd9;
+}
+
+aside[position="right"] {
+    float: right;
+    margin-right: 0;
+}
+
+aside[position="left"] {
+    float: left;
+}
+
+aside:nth-child(-n + 1) {
+    margin-top: 0;
+}
