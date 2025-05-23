@@ -143,6 +143,13 @@
                 <p>
                     Il m'est venu à l'esprit que comme ma structure Parser contient l'input et est construit avant certains parseurs de Token, le parseur de variables peut trouver les variables dans l'input directement ; cela reviendrait à créer des variables en partition et nous avons déjà trouvé un problème à ce sujet. J'ai donc retiré l'input du Parser pour le passer directement au moment du parsing.
                 </p>
+                <h2>
+                    Génération de son
+                </h2>
+                <p>
+                    Comme la longueur des notes (et des silences) est définie par une expression variable, il faut se demander s'il faudrait qu'une note dure le temps indiqué par cette expression au début de la note ou adapter ce temps dynamiquement à la sortie de l'expression de longueur à chaque frame (chaque sample). Je pense qu'il faudrait que cela reste dynamique, et dans ce cas il sera plus efficace de calculer directement la longueur totale en continuant à produire des samples tant que l'expression ne demande pas de continuer. Cependant, cela va marcher pour le silence mais pas pour une note car l'instrument peut se servir de la variable l qui change donc au cours du temps. Il faut générer les samples un par un jusqu'à ce que la variable l nous permette d'arrêter la note.
+                    Le cas du tuplet est particulièrement cocace ; la stratégie sera donc de diviser la taille du vecteur de samples généré par le contenu du tuplet par le nombre de notes et de silences qu'il contient en le downsamplant uniformément. Afin de compter le nombre de notes et de silences dans un Vec<dyn Token>, il fallait pourvoir reconnaitre le type des dyn Token. Cela est normalement possible avec le trait Any de la librairie standard, mais notre dyn Token n'est pas 'static et Any le nécessite. J'ai donc créé un trait Type, qui permet d'accéder à Any avec des dyn Token + 'a non statique en passant si nécessaire par Default::default ou une autre construction statique par défaut. Tout est bon.
+                </p>
 	            </div>]]></description>
 	    </item>
     </channel>
