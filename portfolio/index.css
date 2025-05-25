@@ -53,3 +53,11 @@ aside[position="left"] {
 aside:nth-child(-n + 1) {
     margin-top: 0;
 }
+
+figure div {
+    font-style: normal;
+}
+
+a {
+    white-space: nowrap;
+}
