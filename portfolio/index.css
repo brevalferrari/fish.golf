@@ -1,19 +1,83 @@
 html {
     image-rendering: pixelated;
-    background: url("note_bg_tile.gif") repeat;
 }
 
 body {
-    margin: 4vw;
+    margin: 0;
     font-family: sans-serif;
-    image-rendering: auto;
+    font-size: large;
     display: flex;
     flex-direction: column;
 }
 
 section {
+    margin: 0;
+    padding: 4vw;
     display: block;
-    height: 100vh;
+    min-height: 100vh;
+}
+
+section:nth-child(1) {
+    background: url("note_bg_tile_red.gif") repeat;
+    aside {
+        background-color: red;
+    }
+}
+
+section:nth-child(2) {
+    background: url("note_bg_tile_orange.gif") repeat;
+    aside {
+        background-color: orange;
+    }
+}
+
+section:nth-child(3) {
+    background: url("note_bg_tile_yellow.gif") repeat;
+    aside {
+        background-color: yellow;
+    }
+}
+
+section:nth-child(3) {
+    background: url("note_bg_tile_green.gif") repeat;
+    aside {
+        background-color: greenyellow;
+    }
+}
+
+section:nth-child(4) {
+    background: url("note_bg_tile_blue.gif") repeat;
+    aside {
+        background-color: skyblue;
+    }
+}
+
+section:nth-child(5) {
+    background: url("note_bg_tile_dark_blue.gif") repeat;
+    aside {
+        background-color: steelblue;
+    }
+}
+
+section:nth-child(6) {
+    background: url("note_bg_tile_violet.gif") repeat;
+    aside {
+        background-color: violet;
+    }
+}
+
+section:nth-child(7) {
+    background: url("note_bg_tile_dark_pink.gif") repeat;
+    aside {
+        background-color: darkviolet;
+    }
+}
+
+section:nth-child(8) {
+    background: url("note_bg_tile_pink.gif") repeat;
+    aside {
+        background-color: deeppink;
+    }
 }
 
 h1 {
@@ -25,8 +89,8 @@ video {
     max-width: 100%;
 }
 
-img.pixel {
-    image-rendering: pixelated;
+img.nopix {
+    image-rendering: auto;
 }
 
 div {
@@ -37,8 +101,10 @@ aside {
     width: auto;
     max-width: 30vw;
     font-style: italic;
-    margin: 4vw;
-    background-color: #d5cbd9;
+    margin-right: 4vw;
+    margin-left: 4vw;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 aside[position="right"] {
@@ -48,10 +114,6 @@ aside[position="right"] {
 
 aside[position="left"] {
     float: left;
-}
-
-aside:nth-child(-n + 1) {
-    margin-top: 0;
 }
 
 figure div {

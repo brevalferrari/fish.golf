@@ -31,7 +31,7 @@
         <script type="text/javascript" src="index.js"></script>
 
         <link rel="icon" href="https://fish.golf/fish.svg" />
-        <title>Windows Fish Golf</title>
+        <title>Portfolio Fish Golf</title>
     </head>
 
     <body>
@@ -40,7 +40,7 @@
                 <figure>
                     <!-- blank character for padding purposes -->
                     <figcaption>‎</figcaption>
-                    <img src="me.jpg" alt="me" />
+                    <img class="nopix" src="me.jpg" alt="me" loading="lazy" />
                     <figcaption>This is what I look like</figcaption>
                 </figure>
             </aside>
@@ -67,7 +67,7 @@
                 <p>I have four interests regarding this subject&nbsp;:</p>
             </div>
             <div>
-                <p>(scroll one screen down)</p>
+                <p><br /><br /><br /><br />(scroll one screen down)</p>
             </div>
         </section>
         <section>
@@ -230,6 +230,49 @@
                     </figcaption>
                 </figure>
             </aside>
+            <aside position="left">
+                <figure>
+                    <figcaption>‎</figcaption>
+                    <video src="playthis.mp4" controls></video>
+                    <figcaption>
+                        <a href="https://github.com/brevalferrari/scapy-music"
+                            >playthis</a
+                        >
+                        output given a video, a Python script and a binary of
+                        Bash (the Linux shell).
+                    </figcaption>
+                </figure>
+            </aside>
+            <aside position="right">
+                <figure>
+                    <figcaption>‎</figcaption>
+                    <video src="graphexpr.mp4" controls></video>
+                    <figcaption>GraphExpr demo (desktop version)</figcaption>
+                </figure>
+            </aside>
+            <aside position="left">
+                <figure>
+                    <figcaption>‎</figcaption>
+                    <a href="graph.bmp" target="_blank"
+                        ><img class="nopix" src="graph.bmp" loading="lazy"
+                    /></a>
+                    <figcaption>
+                        Graph got from an early version of GraphExpr <br />
+                        (click on it and zoom!)
+                    </figcaption>
+                </figure>
+            </aside>
+            <aside position="right">
+                <figure>
+                    <figcaption>‎</figcaption>
+                    <img
+                        class="nopix"
+                        src="https://github.com/brevalferrari/coolsvg/blob/main/img/rosace%20filled%201.png?raw=true"
+                        loading="lazy"
+                    />
+                    <figcaption>Fun with SVG paths</figcaption>
+                </figure>
+            </aside>
             <div>
                 <p>
                     Computers are full of logic. So they're full of music. All
@@ -261,11 +304,50 @@
                     I could however bring back to life this old script that
                     changes the color of my RGB keyboard instead&nbsp;:
                 </p>
+                <p>
                     I also made the same thing about hearing keyboard input this
-                    time. <a href="https://github.com/brevalferrari/spybeep">Spybeep</a> turns your keyboard into a piano keyboard but
-                    keeps its functionality. Do not type passwords with it! If
-                    you have <a href="https://rustup.rs">Rust</a>, you can install
-                    it with "cargo install spybeep".
+                    time.
+                    <a href="https://github.com/brevalferrari/spybeep"
+                        >Spybeep</a
+                    >
+                    turns your keyboard into a synth keyboard but keeps its
+                    functionality. Do not type passwords with it! If you have
+                    <a href="https://rustup.rs">Rust</a>, you can install it
+                    with "cargo install spybeep".
+                </p>
+                <p>
+                    Talking about turning events into sound, why not turn any
+                    data into sound as well? I made a tool called
+                    <a href="https://codeberg.org/p6nj/playthis">playthis</a>
+                    which will play anything you have to offer as raw audio.
+                    This process is called
+                    <a href="https://en.wikipedia.org/wiki/Databending"
+                        >Databending</a
+                    >. I'm currently working on
+                    <a href="https://gitdab.com/breval/bent">Bent</a>, a project
+                    aiming to build a user-friendly tool to bend anything into
+                    anything.
+                </p>
+                <p>
+                    Meanwhile, I fiddled with SVG paths, a system that builds
+                    SVG elements out of
+                    <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths"
+                        >a small language</a
+                    >. I did an artistic toy named GraphExpr that builds
+                    parametric graphs. You can visit the online version
+                    <a href="https://graph.fish.golf/">here</a>.
+                </p>
+                <p>
+                    I also have a dead project called
+                    <a href="https://git.disroot.org/breval/Gyromin">Gyromin</a>
+                    which is supposed to be an Android app that turns your phone
+                    into a
+                    <a href="https://en.wikipedia.org/wiki/Theremin"
+                        >Theremin</a
+                    >
+                    powered by the phone's gyroscope. Android development is a
+                    pain but maybe one day I'll get back to it.
                 </p>
             </div>
         </section>
