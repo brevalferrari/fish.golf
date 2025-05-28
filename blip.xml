@@ -152,5 +152,18 @@
                 </p>
 	            </div>]]></description>
 	    </item>
+        <item>
+	        <title>26/05 - 30/05</title>
+	        <link>https://gitdab.com/p6nj/blip</link>
+	        <description
+	        ><![CDATA[<div xmlns="http://www.w3.org/1999/xhtml" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:media="http://search.yahoo.com/mrss/">
+	            <h2>
+	            	Développement
+	            </h2>
+	            <p>
+                    Je test le système de compilation mais la création de samples paraît très lent. Juste pour un silence, il me faut 1.47s. Pour une note, avant correction, le rendering ne s'arrête pas. Je m'embrouille dans mes conversions temps en samples et temps en secondes.
+                </p>
+	            </div>]]></description>
+	    </item>
     </channel>
 </rss>
