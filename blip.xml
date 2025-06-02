@@ -163,6 +163,12 @@
 	            <p>
                     Je test le système de compilation mais la création de samples paraît très lent. Juste pour un silence, il me faut 1.47s. Pour une note, avant correction, le rendering ne s'arrête pas. Je m'embrouille dans mes conversions temps en samples et temps en secondes.
                 </p>
+                <p>
+                    J'ai pris du temps à écrire tous les tests et à réécrire les fonctions de parsing pour un minimum de vitesse, j'ai pris un peu de retard.<br />
+                    J'ai commencé par clarifier quelques erreurs de design : les pentes étaient organisées dans un Map par variable mais il peut à tout moment y avoir plusieurs pentes sur la même variable. J'ai donc opté pour un vecteur, plus facile aussi pour pop les pentes à la fin de leur scope. J'utilisais aussi la variable 'l' pour la durée totale des notes alors que je l'utilisais aussi dans le calcul de cette durée ; j'ai donc remplacé 'l' par 'L' (une capitale pour une valeur plus statique). Il fallait aussi restreindre l'amplitude des samples entre -1 et 1 pour pouvoir écrire des expressions d'instrument sans devoir tenir compte de f64::MAX (suffira maintenant d'écrire sin(...) sans devoir régler précisément l'amplitude).<br />
+                    En écrivant les tests, je me suis apperçu de bugs dans une partie très impérative, Context.render(). Quand il sera temps d'optimiser mon code, je pense que je devrai trouver un moyen de les rendre plus fonctionnels. Encore une preuve de la supériorité de la programmation fonctionnelle.<br />
+                    Enfin, j'ai modifié l'API de la librairie en cachant les lifetimes derrière des traits. Cela permet d'utiliser l'API avec des types assez variables en fonction des besoins tout en simplifiant le code et augmentant probablement son efficacité (en évitant de cloner davantage).
+                </p>
 	            </div>]]></description>
 	    </item>
     </channel>
