@@ -171,5 +171,24 @@
                 </p>
 	            </div>]]></description>
 	    </item>
+        <item>
+	        <title>2/06 - 6/06</title>
+	        <link>https://gitdab.com/p6nj/blip</link>
+	        <description
+	        ><![CDATA[<div xmlns="http://www.w3.org/1999/xhtml" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:media="http://search.yahoo.com/mrss/">
+	            <h2>
+	            	CLI (export, lecture)
+	            </h2>
+	            <p>
+                    Pour l'instant la compilation est très longue et l'audio est très bizarre. L'instrument par défaut génère juste un gros grésillement. J'installe flamegraph pour savoir quoi optimiser dans mon code et j'obtiens ce graphe :
+                </p>
+                <a href="https://gitdab.com/breval/blip/src/commit/fb9b57f75351ffe4ea19c4f8d98c8e7e8a2805af/flamegraph.svg">
+                    <img src="https://gitdab.com/breval/blip/raw/commit/fb9b57f75351ffe4ea19c4f8d98c8e7e8a2805af/flamegraph.svg" alt="graphe" />
+                </a>
+                <p>
+                    J'ai pu améliorer grandement la performance en remplaçant des clone par des mutations et déstructurations.
+                </p>
+	            </div>]]></description>
+	    </item>
     </channel>
 </rss>
