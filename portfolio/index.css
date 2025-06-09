@@ -1,0 +1,139 @@
+html {
+    image-rendering: pixelated;
+}
+
+body {
+    margin: 0;
+    font-family: "Comic Relief", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    margin: 0;
+    padding: 4vw;
+    display: block;
+    min-height: 100vh;
+}
+
+section:nth-child(1) {
+    background: url("note_bg_tile_red.gif") repeat;
+
+    aside {
+        background-color: red;
+    }
+}
+
+section:nth-child(2) {
+    background: url("note_bg_tile_orange.gif") repeat;
+
+    aside {
+        background-color: orange;
+    }
+}
+
+section:nth-child(3) {
+    background: url("note_bg_tile_yellow.gif") repeat;
+
+    aside {
+        background-color: yellow;
+    }
+}
+
+section:nth-child(3) {
+    background: url("note_bg_tile_green.gif") repeat;
+
+    aside {
+        background-color: greenyellow;
+    }
+}
+
+section:nth-child(4) {
+    background: url("note_bg_tile_blue.gif") repeat;
+
+    aside {
+        background-color: skyblue;
+    }
+}
+
+section:nth-child(5) {
+    background: url("note_bg_tile_dark_blue.gif") repeat;
+
+    aside {
+        background-color: violet;
+    }
+}
+
+section:nth-child(6) {
+    background: url("note_bg_tile_dark_pink.gif") repeat;
+
+    aside {
+        background-color: darkviolet;
+    }
+}
+
+section:nth-child(7) {
+    background: url("note_bg_tile_pink.gif") repeat;
+
+    aside {
+        background-color: deeppink;
+    }
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+img,
+video {
+    width: 100%;
+}
+
+img.nopix {
+    image-rendering: auto;
+}
+
+div {
+    margin-bottom: 5vh;
+}
+
+aside {
+    width: auto;
+    max-width: 30vw;
+    font-style: italic;
+    margin-right: 4vw;
+    margin-left: 4vw;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+aside[position="right"] {
+    float: right;
+    margin-right: 0;
+}
+
+aside[position="left"] {
+    float: left;
+}
+
+figure div {
+    font-style: normal;
+}
+
+a {
+    white-space: nowrap;
+}
+
+aside pre {
+    white-space: pre-wrap;
+    /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
+}
