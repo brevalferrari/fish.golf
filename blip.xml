@@ -186,7 +186,14 @@
                     <img src="https://gitdab.com/breval/blip/raw/commit/fb9b57f75351ffe4ea19c4f8d98c8e7e8a2805af/flamegraph.svg" alt="graphe" />
                 </a>
                 <p>
-                    J'ai pu améliorer grandement la performance en remplaçant des clone par des mutations et déstructurations.
+                    J'ai pu améliorer grandement la performance en remplaçant des clone par des mutations et déstructurations. Je peux maintenant me concentrer sur les problèmes de son. Afin d'analyser mon audio de sortie, je dois mettre en oeuvre la fonction d'export de la CLI mais je constate deux problèmes. Le fichier de sortie doit forcément exister (je rajoute un switch constant générique sur la struct ClonableFile, retrouvant un bug du compilateur). Aussi, clap parse tous les arguments exclusifs des InputGroup, ce qui veut dire que l'option -c en export empêche d'entrer un fichier de sortie car tout argument est pris comme le fichier d'entrée (avoir un fichier de sortie et un fichier d'entrée avec l'option -c entraine une erreur car deux éléments exclusifs de l'InputGroup sont détéctés). Je remplace donc l'InputGroup de clap par un parseur nom. Au final, ça ne marche pas non plus car l'option -c est captée par clap avant d'être passée à nom. Je reviens donc sur un inputgroup clap mais en rendant l'output optionnel avec -o.
+                </p>
+                <p>
+                    Quand j'ai pu exporter l'audio, je trouve un résultat très intéressant. Sous audacity, l'onde parait être constante, pourtant elle est audible (sous forme de grésillement). Baisser l'amplitude n'a que peu d'effet. Après l'export depuis l'appli de quelques samples, je me rends compte que blip m'a rendu que des NaN. En dbg!-ant, je constate que ce sont en fait des inf en f32 après conversion des f64 qui eux sont normaux. Les f64 sont par contre hors range de -1 à 1, c'est peut-être la raison pour laquelle ils ont été compris comme NAN. Au final, je me souviens que je voulais que les samples soient entre -max et max alors que dasp et les encodeurs s'attendent à du -1..1 en float. Après correction, j'ai de l'audio nickel.
+                    Pour info, ma commande actuelle pour débugger le programme est <pre>RUST_LOG=trace,bliplib::compiler=debug cargo run -- export -n do,do#,ré,ré#,mi,fa,fa#,sol,sol#,la,la#,si -c "do ré mi" -o test.wav</pre>.
+                </p>
+                <p>
+                    Loop devrait copier les tokens et non les samples pour que les changements soient copiés aussi ; un Tuplet ne devrait pas être vide (réglé) ; j'ai du retirer l'entrée générique I de LocatedSpan<I> complètement pour permettre aux parseurs de wrappeurs comme Loop et Slope de retrouver l'emplacement du début d'un scope mal terminé.
                 </p>
 	            </div>]]></description>
 	    </item>
