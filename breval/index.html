@@ -1,547 +1,406 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- embed -->
-        <meta content="Fish Golf" property="og:title" />
-        <meta
-            content="Killer fish.. Killer fish from San Diego.. I don't know what I am, but I taste really good! I'm a killer fish! Hello! I'll be your killer fish for the evening, Thank you."
-            property="og:description"
-        />
-        <meta content="https://fish.golf" property="og:url" />
-        <meta content="https://fish.golf/fishgolf.png" property="og:image" />
-        <meta content="#030b14" data-react-helmet="true" name="theme-color" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Anti-AI meta tags from https://github.com/healsdata/ai-training-opt-out -->
-        <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
-        <meta name="CCBot" content="nofollow" />
-        <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
-        <meta name="robots" content="noai, noimageai" />
-        <!-- TDM Metadata in HTML Content -->
-        <meta name="tdm-reservation" content="1" />
+    <!-- embed -->
+    <meta content="Fish Golf" property="og:title" />
+    <meta
+        content="Killer fish.. Killer fish from San Diego.. I don't know what I am, but I taste really good! I'm a killer fish! Hello! I'll be your killer fish for the evening, Thank you."
+        property="og:description" />
+    <meta content="https://fish.golf" property="og:url" />
+    <meta content="https://fish.golf/fishgolf.png" property="og:image" />
+    <meta content="#030b14" data-react-helmet="true" name="theme-color" />
 
-        <link rel="icon" href="https://fish.golf/fish.svg" />
+    <!-- Anti-AI meta tags from https://github.com/healsdata/ai-training-opt-out -->
+    <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
+    <meta name="CCBot" content="nofollow" />
+    <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
+    <meta name="robots" content="noai, noimageai" />
+    <!-- TDM Metadata in HTML Content -->
+    <meta name="tdm-reservation" content="1" />
 
-        <title>Breval Fish Golf</title>
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
-            integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="styles.css" />
-        <script src="index.js"></script>
-        <link rel="preload" href="fr.js" as="script" />
-        <link rel="stylesheet" type="text/css" href="fr.css" />
-        <link
-            rel="preload"
-            href="https://fish.golf/explosion.gif"
-            as="image"
-            type="image/gif"
-        />
-    </head>
+    <link rel="icon" href="https://fish.golf/fish.svg" />
 
-    <body>
-        <div id="layout">
-            <a id="fr" href="#"
-                ><img
-                    src="https://fish.golf/france-flag-round.gif"
-                    alt="france flag"
-            /></a>
-            <!-- Menu toggle -->
-            <a href="#menu" id="menuLink" class="menu-link">
-                <!-- Hamburger icon -->
-                <span></span>
-            </a>
+    <title>Breval Fish Golf</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js"></script>
+    <link rel="preload" href="fr.js" as="script" />
+    <link rel="stylesheet" type="text/css" href="fr.css" />
+    <link rel="preload" href="https://fish.golf/explosion.gif" as="image" type="image/gif" />
+</head>
 
-            <div id="menu">
-                <div class="pure-menu">
-                    <a id="menu-menu" class="pure-menu-heading" href="#company"
-                        >Menu</a
-                    >
+<body>
+    <div id="layout">
+        <a id="fr" href="#"><img src="https://fish.golf/france-flag-round.gif" alt="france flag" /></a>
+        <!-- Menu toggle -->
+        <a href="#menu" id="menuLink" class="menu-link">
+            <!-- Hamburger icon -->
+            <span></span>
+        </a>
 
-                    <ul class="pure-menu-list">
-                        <li class="pure-menu-item">
-                            <a
-                                id="menu-info"
-                                href="#info"
-                                class="pure-menu-link"
-                                >Info</a
-                            >
-                        </li>
-                        <li class="pure-menu-item">
-                            <a
-                                id="menu-location"
-                                href="#location"
-                                class="pure-menu-link"
-                                >Location</a
-                            >
-                        </li>
-                        <li class="pure-menu-item">
-                            <a
-                                id="menu-status"
-                                href="#status"
-                                class="pure-menu-link"
-                                >Status</a
-                            >
-                        </li>
-                        <li class="pure-menu-item">
-                            <a
-                                id="menu-facts"
-                                href="#facts"
-                                class="pure-menu-link"
-                                >Quick facts</a
-                            >
-                        </li>
-                        <li class="pure-menu-item">
-                            <a
-                                id="menu-books"
-                                href="#books"
-                                class="pure-menu-link"
-                                >Books</a
-                            >
-                        </li>
-                        <li class="pure-menu-item">
-                            <a
-                                id="menu-series"
-                                href="#series"
-                                class="pure-menu-link"
-                                >Series</a
-                            >
-                        </li>
-                        <li class="pure-menu-item">
-                            <a
-                                id="menu-music"
-                                href="#music"
-                                class="pure-menu-link"
-                                >Music</a
-                            >
-                        </li>
-                        <li class="pure-menu-item">
-                            <a
-                                id="menu-links"
-                                href="#links"
-                                class="pure-menu-link"
-                                >Links</a
-                            >
-                        </li>
-                        <li class="pure-menu-item">
-                            <a
-                                id="menu-pics"
-                                href="#pics"
-                                class="pure-menu-link"
-                                >Pics</a
-                            >
-                        </li>
-                        <li class="pure-menu-item">
-                            <a
-                                id="menu-contact"
-                                href="#contact"
-                                class="pure-menu-link"
-                                >Contact</a
-                            >
-                        </li>
-                        <li class="pure-menu-item" hidden>
-                            <a
-                                id="menu-drawings"
-                                href="#drawings"
-                                class="pure-menu-link"
-                                >Drawings (secret)</a
-                            >
-                        </li>
-                    </ul>
+        <div id="menu">
+            <div class="pure-menu">
+                <a id="menu-menu" class="pure-menu-heading" href="#company">Menu</a>
+
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item">
+                        <a id="menu-info" href="#info" class="pure-menu-link">Info</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a id="menu-location" href="#location" class="pure-menu-link">Location</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a id="menu-status" href="#status" class="pure-menu-link">Status</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a id="menu-facts" href="#facts" class="pure-menu-link">Quick facts</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a id="menu-books" href="#books" class="pure-menu-link">Books</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a id="menu-series" href="#series" class="pure-menu-link">Series</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a id="menu-music" href="#music" class="pure-menu-link">Music</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a id="menu-links" href="#links" class="pure-menu-link">Links</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a id="menu-pics" href="#pics" class="pure-menu-link">Pics</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a id="menu-contact" href="#contact" class="pure-menu-link">Contact</a>
+                    </li>
+                    <li class="pure-menu-item" hidden>
+                        <a id="menu-drawings" href="#drawings" class="pure-menu-link">Drawings (secret)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main">
+            <div class="header">
+                <h1 id="title">Hewwo!!</h1>
+                <h2 id="subtitle">This is my personal page :3</h2>
+            </div>
+
+            <div class="pure-g apart">
+                <div class="pure-u-1-1">
+                    <h2>
+                        <a href="https://swiftyshq.neocities.org/fun/quiz/eon">
+                            <img src="https://swiftyshq.neocities.org/img/quiz/eon/vee4.png" alt="umbreon"
+                                title="timid and introverted, you tend to keep to yourself" /> </a><a
+                            href="http://www.am-i-dumb.com" title="The Dumb Test"><img
+                                src="http://www.am-i-dumb.com/images/stamps/6-1.gif" width="200" height="100" border="0"
+                                title="The Dumb Test" /></a><a
+                            href="https://www.theotaku.com/quizzes/view/1946/what_is_your_level_of_sanity%3F"><img
+                                border="0" src="http://www.theotaku.com/guru_results/1946_4.jpg"
+                                alt="What Is Your Level Of Sanity?" /><br /></a>
+                    </h2>
                 </div>
             </div>
 
-            <div id="main">
-                <div class="header">
-                    <h1 id="title">Hewwo!!</h1>
-                    <h2 id="subtitle">This is my personal page :3</h2>
-                </div>
-
-                <div class="pure-g apart">
-                    <div class="pure-u-1-1">
-                        <h2>
-                            <a
-                                href="https://swiftyshq.neocities.org/fun/quiz/eon"
-                            >
-                                <img
-                                    src="https://swiftyshq.neocities.org/img/quiz/eon/vee4.png"
-                                    alt="umbreon"
-                                    title="timid and introverted, you tend to keep to yourself"
-                                /> </a
-                            ><a
-                                href="http://www.am-i-dumb.com"
-                                title="The Dumb Test"
-                                ><img
-                                    src="http://www.am-i-dumb.com/images/stamps/6-1.gif"
-                                    width="200"
-                                    height="100"
-                                    border="0"
-                                    title="The Dumb Test" /></a
-                            ><a
-                                href="https://www.theotaku.com/quizzes/view/1946/what_is_your_level_of_sanity%3F"
-                                ><img
-                                    border="0"
-                                    src="http://www.theotaku.com/guru_results/1946_4.jpg"
-                                    alt="What Is Your Level Of Sanity?" /><br
-                            /></a>
-                        </h2>
+            <div class="content">
+                <h2 id="info" class="content-subhead">
+                    Breval Ferrari (@breval / @p6nj)
+                </h2>
+                <div class="pure-g">
+                    <div class="pure-u-1-4">
+                        <br />
+                        <img class="pure-img-responsive" src="https://api.lanyard.rest/416369607931068426.gif"
+                            alt="Discord profile picture" />
+                    </div>
+                    <div class="pure-u-1-4"></div>
+                    <div class="pure-u-1-2">
+                        <p id="persona">This is my real name.</p>
+                        <p id="description">
+                            I'm a tall French pan enboy twink (he/him/*)
+                            trying his best to help everyone in his main
+                            quest: to find a place in this giant world.
+                        </p>
+                        <p id="pronouns">
+                            You can check out my
+                            <a href="https://en.pronouns.page/@p6nj" title="Ponouns.page">
+                                pronouns</a>
+                            if you want.
+                        </p>
+                        <p id="home">Here's a link back home:</p>
+                        <a href="https://fish.golf" title="home">
+                            <img src="https://fish.golf/fishgolf1.gif" alt="fish.golf static button" /></a>
+                        <p id="apioform">
+                            I am also compelled to provide you this link:
+                        </p>
+                        <a href="https://citrons.xyz/a/memetic-apioform-page.html"><img
+                                src="https://citrons.xyz/a/static/apiopage.png" /></a>
                     </div>
                 </div>
 
-                <div class="content">
-                    <h2 id="info" class="content-subhead">
-                        Breval Ferrari (@breval / @p6nj)
-                    </h2>
-                    <div class="pure-g">
-                        <div class="pure-u-1-4">
-                            <br />
-                            <img
-                                class="pure-img-responsive"
-                                src="https://api.lanyard.rest/416369607931068426.gif"
-                                alt="Discord profile picture"
-                            />
-                        </div>
-                        <div class="pure-u-1-4"></div>
-                        <div class="pure-u-1-2">
-                            <p id="persona">This is my real name.</p>
-                            <p id="description">
-                                I'm a tall French pan enboy twink (he/him/*)
-                                trying his best to help everyone in his main
-                                quest: to find a place in this giant world.
-                            </p>
-                            <p id="pronouns">
-                                You can check out my
-                                <a
-                                    href="https://en.pronouns.page/@p6nj"
-                                    title="Ponouns.page"
-                                >
-                                    pronouns</a
-                                >
-                                if you want.
-                            </p>
-                            <p id="home">Here's a link back home:</p>
-                            <a href="https://fish.golf" title="home">
-                                <img
-                                    src="https://fish.golf/fishgolf1.gif"
-                                    alt="fish.golf static button"
-                            /></a>
-                            <p id="apioform">
-                                I am also compelled to provide you this link:
-                            </p>
-                            <a
-                                href="https://citrons.xyz/a/memetic-apioform-page.html"
-                                ><img
-                                    src="https://citrons.xyz/a/static/apiopage.png"
-                            /></a>
-                        </div>
+                <h2 id="location" class="content-subhead">Location</h2>
+                <p id="location-p">This is where I post from :</p>
+                <div class="pure-g">
+                    <div class="pure-u-1-1" style="height: 354px">
+                        <img id="lol" src="https://picsum.photos/536/354"
+                            alt="random picture with a red circle in it" /><canvas id="canvas" width="536px"
+                            height="354px"></canvas>
+                        <script>
+                            const img = document.getElementById("lol");
+                            const cnvs = document.getElementById("canvas");
+
+                            img.onload = () => {
+                                cnvs.style.position = "relative";
+                                cnvs.style.top = "-362px";
+
+                                var ctx = cnvs.getContext("2d");
+                                ctx.beginPath();
+                                let r = Math.floor(Math.random() * 58) + 3;
+                                ctx.arc(
+                                    Math.floor(
+                                        Math.random() * (536 - r * 2),
+                                    ) + r,
+                                    Math.floor(
+                                        Math.random() * (354 - r * 2),
+                                    ) + r,
+                                    r,
+                                    0,
+                                    2 * Math.PI,
+                                );
+                                ctx.lineWidth = 4;
+                                ctx.strokeStyle = "red";
+                                ctx.stroke();
+                            };
+                        </script>
                     </div>
+                </div>
 
-                    <h2 id="location" class="content-subhead">Location</h2>
-                    <p id="location-p">This is where I post from :</p>
-                    <div class="pure-g">
-                        <div class="pure-u-1-1" style="height: 354px">
-                            <img
-                                id="lol"
-                                src="https://picsum.photos/536/354"
-                                alt="random picture with a red circle in it"
-                            /><canvas
-                                id="canvas"
-                                width="536px"
-                                height="354px"
-                            ></canvas>
-                            <script>
-                                const img = document.getElementById("lol");
-                                const cnvs = document.getElementById("canvas");
+                <h2 id="status" class="content-subhead">Status</h2>
+                <h3 id="news-helloworld-h">12/29/2024 - hello world</h3>
+                <p id="news-helloworld-p">
+                    My first status. I'm currently attending Québec
+                    University at Chicoutimi as a Computer Science exchange
+                    student and actively looking for an internship in Québec
+                    or some other province. I'm in the winter break rn so I
+                    got time to feed my website.
+                </p>
 
-                                img.onload = () => {
-                                    cnvs.style.position = "relative";
-                                    cnvs.style.top = "-362px";
+                <h3 id="news-2025-h">4/04/2025 - hi 2025</h3>
+                <p id="news-2025-p">
+                    The US are in fire, France secret services are getting
+                    greedy over our personal data, big people prepare for
+                    war. In the meantime, we the people get broken up and
+                    flourish again. My internship turned into a project and
+                    I'll be making a more serious thing out of my
+                    Bleeperpreter project. A new one with all the things in
+                    it. Tried shrooms, got way better, then slightly worse
+                    and back again. Loved friends, hurt friends, loved them
+                    again and ended up alone again multiple times; but now,
+                    I'm never alone again. I got me back. I'm learning how
+                    to love. I guess that's the best part of my student
+                    exchange program.
+                </p>
 
-                                    var ctx = cnvs.getContext("2d");
-                                    ctx.beginPath();
-                                    let r = Math.floor(Math.random() * 58) + 3;
-                                    ctx.arc(
-                                        Math.floor(
-                                            Math.random() * (536 - r * 2),
-                                        ) + r,
-                                        Math.floor(
-                                            Math.random() * (354 - r * 2),
-                                        ) + r,
-                                        r,
-                                        0,
-                                        2 * Math.PI,
-                                    );
-                                    ctx.lineWidth = 4;
-                                    ctx.strokeStyle = "red";
-                                    ctx.stroke();
-                                };
-                            </script>
-                        </div>
+                <h2 id="facts" class="content-subhead">Quick facts</h2>
+                <p id="facts-p">Here are some quick facts :</p>
+                <ul>
+                    <li id="facts-carl">
+                        <a href="https://www.youtube.com/@CarlSagan42">CarlSagan42</a>
+                        taught me English (fan since ~2016 <3) </li>
+                    <li id="facts-you">You're awesome</li>
+                    <li id="facts-ptype">
+                        I'm
+                        <a href="https://www.16personalities.com/profiles/enfp-t/o/3xd6htki3">ENFP-T</a>!
+                    </li>
+                    <li id="facts-nolie">I never lie</li>
+                    <li id="facts-lie">I lie sometimes</li>
+                    <li id="facts-real">I am real (probably)</li>
+                    <li id="facts-orchestra">
+                        Some musicians in big orchestras feel useless. They
+                        are part of the whole thing for sure but they feel
+                        like they're never heard. We do notice when they're
+                        not there however. Sometimes if you feel like a lost
+                        violin player in a huge orchestra, remember that you
+                        matter. Life for many of us wouldn't be the same
+                        without you. Next time you watch an orchestra,
+                        listen very carefully and sure enough you will hear
+                        them all. They are one.
+                    </li>
+                    <li id="facts-gentoo">
+                        I use Q4OS after about ~19 distros (I have spare
+                        time)
+                    </li>
+                </ul>
+
+                <!-- ඞ -->
+
+                <h2 id="books" class="content-subhead">Books</h2>
+                <p id="books-p">
+                    As a little chimp I used to read Ray Bradbury novels
+                    translated to French. Now my all-time favorite is
+                    Douglas Adams' good old Hitch-Hiker's Guide to the
+                    Galaxy.<br />
+                    I also read a bit of Cory Doctorow. This guy's based af.
+                </p>
+
+                <h2 id="series" class="content-subhead">Series</h2>
+                <p id="series-p">
+                    I'm a Legion FX fan. When it comes to anime, I love
+                    Lain. Nichijou is the cutest thing ever. Azumanga Daioh
+                    is great. Evangelion is peak.
+                </p>
+
+                <h2 id="music" class="content-subhead">Music</h2>
+                <p id="music-tastes">
+                    Silly music playlists. They are my fuel. Waiter, more
+                    <a href="https://youtu.be/q4i05EaML44">glorp</a>
+                    please! 3 gazillion
+                    <a href="https://youtu.be/cblmv35uMDM">Glumbo</a>s
+                    also!!<br />
+                    Vaporwave, my all time friend. I love effects and my
+                    favorite vaporwave artist is
+                    <a href="https://www.youtube.com/watch?v=YTRHBA7Ld0k">Telepath</a>.
+                </p>
+                <p id="music-play">
+                    I also enjoy... Playing music!<br />
+                    I have professional piano skills ("I got paid four
+                    times" level 💪), can sing almost anything (training on
+                    Queen), and I've been playing in orchestras for a long
+                    time too (but more like hard keyboards: xylophone,
+                    vibes, chimes, glockenspiel and marimba! and
+                    triangle!).<br />
+                    Watch me pounding chains on the ground
+                    <a href="https://youtu.be/CnY2KjfxM5k">here</a>!
+                </p>
+                <p id="music-make">
+                    I made some music on Bandcamp but the last track is a
+                    mistake<a id="back" href="#asterisk">*</a> and the only
+                    other thing is an old sloppy album. See
+                    <a href="#links">Links</a>.
+                </p>
+
+                <h2 id="links" class="content-subhead">Links</h2>
+                <p id="links-p">
+                    All my links are on
+                    <a href="https://breval.carrd.co/" title="Carrd.co">Carrd</a>.
+                </p>
+                <img src="detour.gif" alt="detour" />
+
+                <h2 id="pics" class="content-subhead">Pics</h2>
+                <p id="pics-p">
+                    Here are some proofs that I'm actually real :
+                </p>
+                <div class="pure-g">
+                    <div class="pure-u-1-2">
+                        <img class="pure-img" src="mustachio.jpg" />
                     </div>
-
-                    <h2 id="status" class="content-subhead">Status</h2>
-                    <h3 id="news-helloworld-h">12/29/2024 - hello world</h3>
-                    <p id="news-helloworld-p">
-                        My first status. I'm currently attending Québec
-                        University at Chicoutimi as a Computer Science exchange
-                        student and actively looking for an internship in Québec
-                        or some other province. I'm in the winter break rn so I
-                        got time to feed my website.
-                    </p>
-
-                    <h3 id="news-2025-h">4/04/2025 - hi 2025</h3>
-                    <p id="news-2025-p">
-                        The US are in fire, France secret services are getting
-                        greedy over our personal data, big people prepare for
-                        war. In the meantime, we the people get broken up and
-                        flourish again. My internship turned into a project and
-                        I'll be making a more serious thing out of my
-                        Bleeperpreter project. A new one with all the things in
-                        it. Tried shrooms, got way better, then slightly worse
-                        and back again. Loved friends, hurt friends, loved them
-                        again and ended up alone again multiple times; but now,
-                        I'm never alone again. I got me back. I'm learning how
-                        to love. I guess that's the best part of my student
-                        exchange program.
-                    </p>
-
-                    <h2 id="facts" class="content-subhead">Quick facts</h2>
-                    <p id="facts-p">Here are some quick facts :</p>
-                    <ul>
-                        <li id="facts-carl">
-                            <a href="https://www.youtube.com/@CarlSagan42"
-                                >CarlSagan42</a
-                            >
-                            taught me English (fan since ~2016 <3)
-                        </li>
-                        <li id="facts-you">You're awesome</li>
-                        <li id="facts-ptype">
-                            I'm
-                            <a
-                                href="https://www.16personalities.com/profiles/enfp-t/o/3xd6htki3"
-                                >ENFP-T</a
-                            >!
-                        </li>
-                        <li id="facts-nolie">I never lie</li>
-                        <li id="facts-lie">I lie sometimes</li>
-                        <li id="facts-real">I am real (probably)</li>
-                        <li id="facts-orchestra">
-                            Some musicians in big orchestras feel useless. They
-                            are part of the whole thing for sure but they feel
-                            like they're never heard. We do notice when they're
-                            not there however. Sometimes if you feel like a lost
-                            violin player in a huge orchestra, remember that you
-                            matter. Life for many of us wouldn't be the same
-                            without you. Next time you watch an orchestra,
-                            listen very carefully and sure enough you will hear
-                            them all. They are one.
-                        </li>
-                        <li id="facts-gentoo">
-                            I use Q4OS after about ~19 distros (I have spare
-                            time)
-                        </li>
-                    </ul>
-
-                    <!-- ඞ -->
-
-                    <h2 id="books" class="content-subhead">Books</h2>
-                    <p id="books-p">
-                        As a little chimp I used to read Ray Bradbury novels
-                        translated to French. Now my all-time favorite is
-                        Douglas Adams' good old Hitch-Hiker's Guide to the
-                        Galaxy.<br />
-                        I also read a bit of Cory Doctorow. This guy's based af.
-                    </p>
-
-                    <h2 id="series" class="content-subhead">Series</h2>
-                    <p id="series-p">
-                        I'm a Legion FX fan. When it comes to anime, I love
-                        Lain. Nichijou is the cutest thing ever. Azumanga Daioh
-                        is great. Evangelion is peak.
-                    </p>
-
-                    <h2 id="music" class="content-subhead">Music</h2>
-                    <p id="music-tastes">
-                        Silly music playlists. They are my fuel. Waiter, more
-                        <a href="https://youtu.be/q4i05EaML44">glorp</a>
-                        please! 3 gazillion
-                        <a href="https://youtu.be/cblmv35uMDM">Glumbo</a>s
-                        also!!<br />
-                        Vaporwave, my all time friend. I love effects and my
-                        favorite vaporwave artist is
-                        <a href="https://www.youtube.com/watch?v=YTRHBA7Ld0k"
-                            >Telepath</a
-                        >.
-                    </p>
-                    <p id="music-play">
-                        I also enjoy... Playing music!<br />
-                        I have professional piano skills ("I got paid four
-                        times" level 💪), can sing almost anything (training on
-                        Queen), and I've been playing in orchestras for a long
-                        time too (but more like hard keyboards: xylophone,
-                        vibes, chimes, glockenspiel and marimba! and
-                        triangle!).<br />
-                        Watch me pounding chains on the ground
-                        <a href="https://youtu.be/CnY2KjfxM5k">here</a>!
-                    </p>
-                    <p id="music-make">
-                        I made some music on Bandcamp but the last track is a
-                        mistake<a id="back" href="#asterisk">*</a> and the only
-                        other thing is an old sloppy album. See
-                        <a href="#links">Links</a>.
-                    </p>
-
-                    <h2 id="links" class="content-subhead">Links</h2>
-                    <p id="links-p">
-                        All my links are on
-                        <a href="https://breval.carrd.co/" title="Carrd.co"
-                            >Carrd</a
-                        >.
-                    </p>
-                    <img src="detour.gif" alt="detour" />
-
-                    <h2 id="pics" class="content-subhead">Pics</h2>
-                    <p id="pics-p">
-                        Here are some proofs that I'm actually real :
-                    </p>
-                    <div class="pure-g">
-                        <div class="pure-u-1-2">
-                            <img class="pure-img" src="mustachio.jpg" />
-                        </div>
-                        <div class="pure-u-1-2">
-                            <img
-                                class="pure-img"
-                                src="https://github.com/brevalferrari/fish.golf/blob/e7a71ef18065569bc4e9903300a90b5bcd91761f/breval/creep.jpeg?raw=true"
-                            />
-                        </div>
+                    <div class="pure-u-1-2">
+                        <img class="pure-img" src="creep.jpeg" />
                     </div>
+                </div>
 
-                    <h2 id="contact" class="content-subhead">Contact ⚡</h2>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td id="contact-mail">eMail</td>
-                                <td>
-                                    <a href="mailto:breval@fish.golf"
-                                        >breval@fish.golf</a
-                                    >
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Discord</td>
-                                <td>p6nj</td>
-                            </tr>
-                            <tr>
-                                <td id="contact-telepathy">telepathy</td>
-                                <td>...</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <h2 id="contact" class="content-subhead">Contact ⚡</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td id="contact-mail">eMail</td>
+                            <td>
+                                <a href="mailto:breval@fish.golf">breval@fish.golf</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Discord</td>
+                            <td>p6nj</td>
+                        </tr>
+                        <tr>
+                            <td id="contact-telepathy">telepathy</td>
+                            <td>...</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                    <h2 id="drawings" class="content-subhead" hidden>
-                        Drawings (secret)
-                    </h2>
-                    <p id="drawings-scared" hidden>Ah! You scared me.</p>
-                    <p id="drawings-p" hidden>
-                        Well, looks like you found some of my drawings. They're
-                        from notebooks I had when I was 11 to 15 years old.<br />
-                        I filled 5 notebooks, from 50 pages to 100 each.
-                    </p>
-                    <p id="drawings-context" hidden>
-                        You could find me during that time at the playground
-                        alone on a bench, folded like a shrimp, focused, filling
-                        these with pencil drawings, games inspired from
-                        magazines I made for myself and small essays on life and
-                        everything.
-                    </p>
-                    <p id="drawings-life" hidden>
-                        Life as a loner was hard but it didn't matter.
-                    </p>
-                    <div class="pure-g" hidden>
-                        <div class="pure-u-1-4" hidden>
-                            <img
-                                class="pure-img"
-                                src="secret/lore.png"
-                                hidden
-                            />
-                        </div>
-                        <div class="pure-u-1-4" hidden>
-                            <img
-                                class="pure-img"
-                                src="secret/anatomy.png"
-                                hidden
-                            />
-                        </div>
-                        <div class="pure-u-1-4" hidden>
-                            <img
-                                class="pure-img"
-                                src="https://github.com/brevalferrari/fish.golf/blob/e7a71ef18065569bc4e9903300a90b5bcd91761f/breval/secret/forest.png?raw=true"
-                                hidden
-                            />
-                        </div>
-                        <div class="pure-u-1-4" hidden>
-                            <img
-                                class="pure-img"
-                                src="secret/eepy.png"
-                                hidden
-                            />
-                        </div>
+                <h2 id="drawings" class="content-subhead" hidden>
+                    Drawings (secret)
+                </h2>
+                <p id="drawings-scared" hidden>Ah! You scared me.</p>
+                <p id="drawings-p" hidden>
+                    Well, looks like you found some of my drawings. They're
+                    from notebooks I had when I was 11 to 15 years old.<br />
+                    I filled 5 notebooks, from 50 pages to 100 each.
+                </p>
+                <p id="drawings-context" hidden>
+                    You could find me during that time at the playground
+                    alone on a bench, folded like a shrimp, focused, filling
+                    these with pencil drawings, games inspired from
+                    magazines I made for myself and small essays on life and
+                    everything.
+                </p>
+                <p id="drawings-life" hidden>
+                    Life as a loner was hard but it didn't matter.
+                </p>
+                <div class="pure-g" hidden>
+                    <div class="pure-u-1-4" hidden>
+                        <img class="pure-img" src="secret/lore.png" hidden />
                     </div>
-                    <p id="drawings-caption" hidden>
-                        The water droplet was my main character, more like a
-                        species: Miramiro. The creature was inspired by a
-                        drawing from my older sibling, who's also my favorite
-                        artist.
-                    </p>
+                    <div class="pure-u-1-4" hidden>
+                        <img class="pure-img" src="secret/anatomy.png" hidden />
+                    </div>
+                    <div class="pure-u-1-4" hidden>
+                        <img class="pure-img" src="secret/forest.png" hidden />
+                    </div>
+                    <div class="pure-u-1-4" hidden>
+                        <img class="pure-img" src="secret/eepy.png" hidden />
+                    </div>
+                </div>
+                <p id="drawings-caption" hidden>
+                    The water droplet was my main character, more like a
+                    species: Miramiro. The creature was inspired by a
+                    drawing from my older sibling, who's also my favorite
+                    artist.
+                </p>
 
-                    <h2 class="content-subhead">John</h2>
-                    <iframe
-                        src="https://john.citrons.xyz/embed?ref=fish.golf"
-                        style="
+                <h2 class="content-subhead">John</h2>
+                <iframe src="https://john.citrons.xyz/embed?ref=fish.golf" style="
                             margin-left: auto;
                             display: block;
                             margin-right: auto;
                             width: 100%;
                             height: 94px;
                             border: none;
-                        "
-                    ></iframe>
-                </div>
+                        "></iframe>
+            </div>
 
-                <div class="footer">
-                    <div class="pure-g">
-                        <p id="asterisk">
-                            (*) I was making an interpreter for some kind of
-                            modified MML (Music Macro Language) and was trying
-                            to make a vibrato from a signal expression. I
-                            naturally put a sine in a sine (to modulate the
-                            frequency variable inside) and I got a vibrato but
-                            with an increasigly high roof. Go back:
-                            <a href="#back">↑</a>
-                        </p>
-                        <p id="feet" style="width: 100%">
-                            This site is built with 🦶 using Pure CSS v3.0.0
-                        </p>
-                        <div>
-                            <button
-                                id="secret"
-                                class="pure-button"
-                                onclick="reveal_secrets()"
-                            >
-                                Reveal all secrets
-                            </button>
-                        </div>
+            <div class="footer">
+                <div class="pure-g">
+                    <p id="asterisk">
+                        (*) I was making an interpreter for some kind of
+                        modified MML (Music Macro Language) and was trying
+                        to make a vibrato from a signal expression. I
+                        naturally put a sine in a sine (to modulate the
+                        frequency variable inside) and I got a vibrato but
+                        with an increasigly high roof. Go back:
+                        <a href="#back">↑</a>
+                    </p>
+                    <p id="feet" style="width: 100%">
+                        This site is built with 🦶 using Pure CSS v3.0.0
+                    </p>
+                    <div>
+                        <button id="secret" class="pure-button" onclick="reveal_secrets()">
+                            Reveal all secrets
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="ui.js"></script>
-        <script src="fr.js"></script>
-    </body>
+    <script src="ui.js"></script>
+    <script src="fr.js"></script>
+</body>
+
 </html>
 <!-- breval -->
